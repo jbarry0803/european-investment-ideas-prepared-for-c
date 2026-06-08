@@ -60,6 +60,12 @@
       --negative:   #a83232;
       --neutral:    #7a6b3a;
 
+      /* Cevian burgundy, secondary brand accent */
+      --burgundy:      #6b1f2e;
+      --burgundy-deep: #4a1520;
+      --burgundy-soft: #8a2a3d;
+      --burgundy-tint: #f6eaec;
+
       /* Per-company brand */
       --ahold:      #2da94f;
       --ahold-deep: #1f7a39;
@@ -172,7 +178,7 @@
     }
 
     .masthead h1 .accent {
-      color: var(--ink-3);
+      color: var(--burgundy);
       font-weight: 400;
     }
 
@@ -364,8 +370,8 @@
       display: inline-block;
       width: 24px;
       height: 1px;
-      background: var(--navy);
-      opacity: 0.5;
+      background: var(--burgundy);
+      opacity: 0.85;
     }
 
     .section-label.is-ahold::before {
@@ -397,7 +403,7 @@
     .opener {
       background: var(--paper-2);
       border: 1px solid var(--rule);
-      border-left: 3px solid var(--navy);
+      border-left: 3px solid var(--burgundy);
       padding: var(--s-7) var(--s-8);
       margin-bottom: var(--s-8);
     }
@@ -406,7 +412,7 @@
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
       letter-spacing: 0.32em;
-      color: var(--ink-3);
+      color: var(--burgundy);
       text-transform: uppercase;
       margin-bottom: var(--s-3);
       font-weight: 500;
@@ -1241,6 +1247,12 @@
       gap: var(--s-5);
     }
 
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--s-5);
+    }
+
     .card {
       background: var(--paper);
       border: 1px solid var(--rule);
@@ -1406,6 +1418,10 @@
         grid-template-columns: 1fr;
       }
 
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
       .chart-grid {
         grid-template-columns: 1fr;
       }
@@ -1487,7 +1503,7 @@
       <div class="masthead-left">
         <p class="classification">Private, Confidential, For Cevian Capital</p>
         <h1>Three Names, <span class="accent">Three Decisions</span></h1>
-        <p class="subtitle">European investment ideas selected for Cevian-style constructive engagement: one live recommendation, one engagement option, one trigger-gated watchlist.</p>
+        <p class="subtitle">European investment ideas selected for Cevian-style constructive engagement: one live recommendation, one engagement option, one watchlist case held back until specific catalysts emerge.</p>
         <div class="meta-row">
           <span>Joe Barry</span>
           <span>April 2026</span>
@@ -1562,11 +1578,11 @@
 
         <!-- Opener -->
         <section class="opener" aria-labelledby="opener-heading">
-          <p class="opening-eyebrow">The 60-second read</p>
+          <p class="opening-eyebrow">Executive summary</p>
           <h2 id="opener-heading">Three names presented as <span class="ital">engagement work</span>, not stock ideas, each ranked by how actionable it is today.</h2>
           <div class="opening-body">
             <p>Cevian arrives at companies; we do not pitch them. So each name carries the layer that separates a Cevian engagement from a generic activist position: the structural opportunity, the supervisory-committee instrument that would carry it, the relationship route into the board, and a return bridge in the shape Cevian thinks about. <strong>Not headline upside, but what you compound while you wait.</strong></p>
-            <p>One is fully investable today. One is a process option whose first 100 days decide whether it stays in the book. The third is the strongest mathematical thesis in the deck, but the CEO has said "not now," litigation peaks this week, and the entry asymmetry is poor at today's price. It is a watchlist case, sized at zero until two of three triggers fire.</p>
+            <p>One is fully investable today. One is a process option whose first 100 days decide whether it stays in the book. The third is the strongest mathematical thesis in the deck, but the CEO has said "not now," litigation peaks this week, and the entry asymmetry is poor at today's price. It is a watchlist case, sized at zero until two of three required conditions are met.</p>
           </div>
         </section>
 
@@ -1589,22 +1605,22 @@
               <p class="vc-pitch is-ahold">A Dutch grocer where <span class="accent">60% of EBITDA</span> comes from US brands US investors don't see. Open US capital-market access and the rerating becomes plausible, and you compound at 9 to 10% per year while waiting.</p>
               <div class="vc-numbers">
                 <div class="vc-num is-bear">
-                  <p class="lbl">Floor</p>
-                  <p class="val">&euro;33</p>
-                  <p class="delta">&minus;19%</p>
+                  <p class="lbl">Bear IRR</p>
+                  <p class="val">&minus;2%</p>
+                  <p class="delta">to &euro;33 floor</p>
                 </div>
                 <div class="vc-num">
-                  <p class="lbl">Base</p>
-                  <p class="val">&euro;42</p>
-                  <p class="delta">+1.5%</p>
+                  <p class="lbl">Base IRR</p>
+                  <p class="val">~10%</p>
+                  <p class="delta">no rerating, FCF compound</p>
                 </div>
                 <div class="vc-num is-catalyst is-ahold">
-                  <p class="lbl">Catalyst</p>
-                  <p class="val">&euro;51</p>
-                  <p class="delta">+25%</p>
+                  <p class="lbl">Catalyst IRR</p>
+                  <p class="val">~14-15%</p>
+                  <p class="delta">+ US listing rerating</p>
                 </div>
               </div>
-              <p class="vc-irr is-ahold">3-yr IRR &middot; <strong>~14 to 15%</strong> catalyst &middot; ~9 to 10% no rerating</p>
+              <p class="vc-irr is-ahold">3-yr horizon &middot; price targets <strong>&euro;33 / &euro;42 / &euro;51</strong> map to bear / base / catalyst</p>
             </article>
 
             <article class="verdict-card" role="listitem">
@@ -1616,25 +1632,25 @@
               </header>
               <h3 class="vc-name">DHL Group</h3>
               <p class="vc-ticker">DHL.DE &middot; &euro;57.7bn cap &middot; &euro;50.14</p>
-              <p class="vc-pitch is-dhl">A <span class="accent">crown-jewel Express business</span> trapped inside a five-division postal-and-logistics group. ABB Power Grids in shape, Cevian's own playbook. The first 100 days decide whether DHL stays in the book.</p>
+              <p class="vc-pitch is-dhl">A <span class="accent">crown-jewel Express business</span> trapped inside a five-division postal-and-logistics group. ABB Power Grids in <em>shape</em>, but at &euro;58bn cap with a state shareholder and full Mitbestimmung this is an <strong>influence-based probe</strong>, not a 5%-plus campaign Cevian can drive directly. The first 100 days decide whether DHL stays in the book.</p>
               <div class="vc-numbers">
                 <div class="vc-num is-bear">
-                  <p class="lbl">Floor</p>
-                  <p class="val">&euro;40</p>
-                  <p class="delta">&minus;20%</p>
+                  <p class="lbl">Bear IRR</p>
+                  <p class="val">&minus;3%</p>
+                  <p class="delta">to &euro;40 floor</p>
                 </div>
                 <div class="vc-num">
-                  <p class="lbl">Base</p>
-                  <p class="val">&euro;50</p>
-                  <p class="delta">~flat</p>
+                  <p class="lbl">Base IRR</p>
+                  <p class="val">~7%</p>
+                  <p class="delta">status quo, no engagement</p>
                 </div>
                 <div class="vc-num is-catalyst is-dhl">
-                  <p class="lbl">Catalyst</p>
-                  <p class="val">&euro;58</p>
-                  <p class="delta">+16%</p>
+                  <p class="lbl">Catalyst IRR</p>
+                  <p class="val">~9-11%</p>
+                  <p class="delta">+ board engages on review</p>
                 </div>
               </div>
-              <p class="vc-irr is-dhl">3-yr IRR &middot; <strong>~9 to 11%</strong> with engagement &middot; ~7% status quo</p>
+              <p class="vc-irr is-dhl">3-yr horizon &middot; price targets <strong>&euro;40 / &euro;50 / &euro;58</strong> map to bear / base / catalyst</p>
             </article>
 
             <article class="verdict-card" role="listitem">
@@ -1646,25 +1662,25 @@
               </header>
               <h3 class="vc-name">Bayer AG</h3>
               <p class="vc-ticker">BAYN.DE &middot; &euro;40.4bn cap &middot; &euro;41.10</p>
-              <p class="vc-pitch is-bayer">The <span class="accent">strongest mathematical thesis</span> in the deck, but the CEO has said "not now," litigation is at its decision point this week, and the stock is up 94% off its lows. Live position only when two of three triggers fire.</p>
+              <p class="vc-pitch is-bayer">The <span class="accent">strongest mathematical thesis</span> in the deck, but the CEO has said "not now," litigation is at its decision point this week, and the stock is up 94% off its lows. Live position only when two of three conditions are met.</p>
               <div class="vc-numbers">
                 <div class="vc-num is-bear">
-                  <p class="lbl">Trigger</p>
-                  <p class="val">&euro;30</p>
-                  <p class="delta">entry</p>
+                  <p class="lbl">From &euro;30 entry</p>
+                  <p class="val">~27%</p>
+                  <p class="delta">conditional entry IRR</p>
                 </div>
                 <div class="vc-num">
-                  <p class="lbl">Today</p>
-                  <p class="val">&euro;41</p>
-                  <p class="delta">status quo</p>
+                  <p class="lbl">Status quo IRR</p>
+                  <p class="val">~5-6%</p>
+                  <p class="delta">CEO holds, organic recovery</p>
                 </div>
                 <div class="vc-num is-catalyst is-bayer">
-                  <p class="lbl">Catalyst</p>
-                  <p class="val">&euro;62</p>
-                  <p class="delta">+50% cond.</p>
+                  <p class="lbl">From &euro;41 (today)</p>
+                  <p class="val">~15%</p>
+                  <p class="delta">if catalyst fires anyway</p>
                 </div>
               </div>
-              <p class="vc-irr is-bayer">3-yr IRR &middot; <strong>~27%</strong> at &euro;30 entry &middot; ~15% at &euro;41</p>
+              <p class="vc-irr is-bayer">3-yr horizon &middot; SOTP <strong>&euro;59-62</strong> &middot; entry price is the swing variable, not the multiple</p>
             </article>
           </div>
         </section>
@@ -1673,7 +1689,7 @@
         <section class="section" aria-labelledby="mech-heading">
           <p class="section-label">The activist mechanism, the engagement instrument</p>
           <h2 id="mech-heading">What distinguishes a Cevian engagement from a generic activist position</h2>
-          <p class="lede">For each name: the single ask, the engagement channel into the supervisory board, and the canonical Cevian precedent it most resembles. This is the layer that turns a stock idea into engagement work.</p>
+          <p class="lede">For each name: the single ask, the engagement channel into the supervisory board, and the canonical Cevian precedent it most resembles. This is the layer that turns a stock idea into engagement work. <strong>Two modes are on the slate.</strong> Ahold is a <em>conventional engagement</em>: a 3 to 5% holder pushing a defined structural ask through the Dutch SB on a 24 to 36 month timeline. DHL is an <em>influence-based probe</em>: scale and ownership preclude a 5%-plus campaign in the early stages, so the work is to seed the Express-review idea inside the Aufsichtsrat and let the board carry it. The mechanism row below maps each onto the appropriate mode.</p>
 
           <div class="mech-row">
             <article class="mech is-ahold">
@@ -1690,7 +1706,8 @@
               <p class="mech-row-item"><strong>The ask.</strong> Express separation, with PPG retained as union-protected German entity.</p>
               <p class="mech-row-item"><strong>Channel.</strong> Aufsichtsrat Strategy Committee, already meeting 8&times; per year on Strategy 2030.</p>
               <p class="mech-row-item"><strong>Relationship leverage.</strong> The current Strategy Committee Chair was a CEO at one of Cevian's prior German engagements, suggesting a credible peer-to-peer entry.</p>
-              <p class="mech-row-item"><strong>State alignment.</strong> KfW representation on Strategy Committee means the 16% holder is embedded in the instrument. The 2024 sell-down to ~16.5% (further drift since) shows the stake is financial and reducible, but does not equate to support for separation.</p>
+              <p class="mech-row-item"><strong>State alignment.</strong> KfW now <strong>17.73%</strong>, mechanically up from the 2024 sell-down level via buyback-driven share retirement. Passive financial holder, no special voting rights. Blocks a <em>demerger</em> (75% AGM supermajority) but not a <em>sale</em>; sale-led structures are therefore the path of least resistance.</p>
+              <p class="mech-row-item"><strong>Flow opportunity.</strong> Next KfW placement, most plausibly an ABB-style accelerated bookbuild, is the anchor moment to step the probe to 5 to 7%.</p>
               <p class="mech-row-item"><strong>Precedent.</strong> ABB Power Grids, 3-year sale; DHL ~5 to 7y given Mitbestimmung.</p>
             </article>
 
@@ -1708,14 +1725,14 @@
         <!-- Decision box -->
         <aside class="decision-box" aria-labelledby="decision-heading">
           <p class="db-eyebrow">The recommendation</p>
-          <h2 id="decision-heading">Underwrite Ahold today. Use DHL's first 100 days as the decision-gate. Hold Bayer to triggers.</h2>
-          <p><strong><span class="ah">Ahold</span></strong> is the only fully investable idea: scale into a 3 to 5% position via Akzo Nobel-style Dutch-channel engagement, target NYSE primary listing on a 24 to 36 month horizon. <strong><span class="dh">DHL</span></strong> is a probe (1 to 2%) until the Aufsichtsrat board-appetite test is complete; without active board interest, exit. <strong><span class="ba">Bayer</span></strong> stays at zero until SCOTUS Durnell, the CEO's stance, and entry-price triggers align.</p>
+          <h2 id="decision-heading">Underwrite Ahold today. Use DHL's first 100 days as the decision-gate. Hold Bayer to its catalyst conditions.</h2>
+          <p><strong><span class="ah">Ahold</span></strong> is the only conventional Cevian engagement on the slate: scale into a 3 to 5% position via Akzo Nobel-style Dutch-channel access, target NYSE primary listing on a 24 to 36 month horizon, the structural ask is sized to what an active 3 to 5% holder can credibly drive. <strong><span class="dh">DHL</span></strong> is <em>not</em> a campaign at the size Cevian can put on, it is an <strong>influence-based probe</strong> (1 to 2%, scalable to 5 to 7% only via a KfW placement window): a state-anchored, co-determined, &euro;58bn-cap conglomerate where Cevian's role is to seed the structural-review idea inside the Aufsichtsrat and let the board own it from there. The first 100 days are the test of whether that seeding takes; without active board interest, exit. <strong><span class="ba">Bayer</span></strong> stays at zero until SCOTUS Durnell, the CEO's stance, and entry-price conditions align.</p>
         </aside>
 
         <!-- Honest hierarchy synth -->
         <div class="synth" style="margin-top: 32px;">
           <h3>The honest hierarchy</h3>
-          <p>Headline upsides hide the question Cevian actually underwrites: <em>how does the return get built, and do I make money while waiting for the catalyst?</em> Ahold is Amadeus-shaped: the business compounds at ~9 to 10% with no rerating credit, so the catalyst is upside on top of a defensible base. DHL's status-quo IRR of ~7% is borderline; the Aufsichtsrat board-appetite test is the binary signal. Bayer has the cleanest break-up math but the worst entry asymmetry today. The framework is consistent across all three: cap downside at 20%, build the no-rerating case before crediting any catalyst, and never assume engagement bandwidth where the board has not signalled it.</p>
+          <p>Headline upsides hide the question Cevian actually underwrites: <em>how does the return get built, and do I make money while waiting for the catalyst?</em> <strong><span class="ah">Ahold</span></strong> compounds at ~9 to 10% on the FCF base with no rerating credit; the listing catalyst is upside on top, not load-bearing. <strong><span class="dh">DHL</span></strong> at peer multiples clears the price by ~5%; the IRR is a binary on whether Express review becomes a real Aufsichtsrat workstream. The first 100 days decide. <strong><span class="ba">Bayer</span></strong> has the cleanest break-up math and the worst entry asymmetry: a +94% rally has compressed it. Discipline holds the gate.</p>
         </div>
 
       </div>
@@ -1767,8 +1784,12 @@
 
         <section class="section" aria-labelledby="ahold-setup">
           <p class="section-label is-ahold">&sect; 2.1, The setup</p>
-          <h2 id="ahold-setup">A US company and a European company stapled together</h2>
-          <p class="lede">60% of revenue from US grocery: Food Lion (53 consecutive comp-growth quarters), Stop &amp; Shop, Hannaford, Giant. The other 40% is European: Albert Heijn (Netherlands), Delhaize (Belgium), bol.com (Dutch e-commerce, plausible Zalando-comp). The Dutch listing means US institutions cannot easily buy the US business, the entire group EV of &euro;51bn is being valued as a European grocer. Apply Kroger's 8.0&times; to US-only EBITDA and you imply &euro;32bn of EV inside a group worth &euro;51bn, leaving the European half priced at &euro;19bn for &euro;2.8bn of EBITDA.</p>
+          <h2 id="ahold-setup">US earnings without US investor access</h2>
+          <p class="lede"><strong>What it is.</strong> Ahold Delhaize is a transatlantic grocery operator with two halves stapled together. <strong>The US half</strong> (60% of revenue, ~&euro;4.5bn EBITDA) is Food Lion, Stop &amp; Shop, Hannaford and Giant, ranking among the top-five US conventional grocers and most directly comparable to Kroger. <strong>The European half</strong> (40% of revenue, ~&euro;2.8bn EBITDA) is Albert Heijn (the dominant Dutch grocer, structural #1), Delhaize Belgium, and bol.com, the Netherlands' largest e-commerce platform. Group EV is &euro;51bn (&euro;36.3bn cap + &euro;14.7bn net debt, CapIQ FY25).</p>
+
+          <p class="lede"><strong>What the market is missing.</strong> The mispricing is not the SOTP, the European half at ~6.8&times; is reasonable for a defensive European grocer, and the group multiple of 7.5&times; is only fractionally below Kroger's 8.0&times;. The mispricing is <em>capital-markets misalignment</em>: a company that earns ~60% of its EBITDA in the US, listed only on Euronext Amsterdam, where US institutional investors largely cannot buy it. The result is a US-earnings business priced inside a European-grocer investor base. The fix is structural, not operational.</p>
+
+          <p class="lede"><strong>What specifically would change.</strong> A US primary listing (CRH model, see &sect; 2.5) opens the register to US grocery-sector investors and S&amp;P 500 index demand. The business does not need to be broken up; it needs to be made buyable by the natural marginal investor. Cevian's role is to bring that case to a Dutch supervisory board that is already comfortable with structural reviews.</p>
 
           <div class="story-grid">
             <article class="story-block is-ahold">
@@ -1782,13 +1803,151 @@
               </ul>
             </article>
             <article class="story-block is-ahold">
-              <h3>The valuation gap</h3>
+              <h3>The capital-markets gap</h3>
               <ul>
-                <li>Group trades 7.5&times; EV/EBITDA vs Kroger 8.0&times;</li>
-                <li>US business at Kroger 8&times; implies &euro;32bn EV inside &euro;51bn group</li>
-                <li>European half implied at ~&euro;19bn for &euro;2.8bn EBITDA (~6.8&times;, defensible)</li>
-                <li>bol.com inside Europe modeled separately at 15&times; (still discount to Zalando)</li>
-                <li>Group EV &euro;51bn = &euro;36.3bn cap + &euro;14.7bn net debt (CapIQ FY25)</li>
+                <li>~60% of EBITDA earned in the US, listed only on Euronext Amsterdam (AD.AS)</li>
+                <li>US institutional ownership constrained: ADR-only access, no S&amp;P 500 eligibility</li>
+                <li>Group trades 7.5&times; EV/EBITDA vs Kroger 8.0&times;, gap is small but the <em>access</em> gap is structural</li>
+                <li>European half at implied ~6.8&times; is fair, this is not a SOTP unlock</li>
+                <li>The unlock is investor-base broadening, not operational separation</li>
+              </ul>
+            </article>
+          </div>
+
+          <h3 style="margin-top: var(--s-7); margin-bottom: var(--s-2); color: var(--navy-deep);">Peer set, with the multiple gap made explicit</h3>
+          <p class="lede" style="margin-bottom: var(--s-3);">Ahold trades roughly in line with both its US peers and its European peers. That is itself the evidence: a US-earnings-majority business priced at the European-grocer multiple, because the marginal investor is European. The fix is not to argue the multiple is wrong, but to widen the investor base.</p>
+
+          <div class="table-wrap">
+            <table class="ct">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 180px;">Peer</th>
+                  <th scope="col" style="width: 100px;">Listing / domicile</th>
+                  <th scope="col" style="text-align: center; width: 110px;">EV/EBITDA NTM</th>
+                  <th scope="col">What it tells us</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background: var(--ahold-bg);">
+                  <td><strong style="color: var(--ahold-deep);">Ahold Delhaize</strong><br><span style="color: var(--ink-3); font-size: 11px;">~60% US EBITDA, ~40% EU</span></td>
+                  <td>Euronext Amsterdam</td>
+                  <td style="text-align: center;" class="cell-val">7.5&times;</td>
+                  <td><em>Subject company.</em> The blend of a Kroger-like US business and a defensive European grocer.</td>
+                </tr>
+                <tr>
+                  <td><strong>Kroger</strong><br><span style="color: var(--ink-3); font-size: 11px;">US conventional grocer</span></td>
+                  <td>NYSE, US</td>
+                  <td style="text-align: center;" class="cell-val">8.0&times;</td>
+                  <td>The closest direct peer for Ahold's US business. Comparable scale, geography, format, customer. Sets the rerating ceiling for the US half.</td>
+                </tr>
+                <tr>
+                  <td><strong>Walmart</strong><br><span style="color: var(--ink-3); font-size: 11px;">US mass-market</span></td>
+                  <td>NYSE, US</td>
+                  <td style="text-align: center;" class="cell-val">17.0&times;</td>
+                  <td>Premium peer reflecting scale, ecommerce flywheel, and S&amp;P 500 inclusion. Not a target multiple, included to show the upper bound of the US-listed grocery comp range.</td>
+                </tr>
+                <tr>
+                  <td><strong>Costco</strong><br><span style="color: var(--ink-3); font-size: 11px;">US membership warehouse</span></td>
+                  <td>Nasdaq, US</td>
+                  <td style="text-align: center;" class="cell-val">25.0&times;</td>
+                  <td>Outlier on quality and growth, included as the format ceiling. The point is the dispersion: US-listed grocers occupy 8&times; to 25&times;, well above European peers.</td>
+                </tr>
+                <tr>
+                  <td><strong>Tesco</strong><br><span style="color: var(--ink-3); font-size: 11px;">UK conventional grocer</span></td>
+                  <td>LSE, UK</td>
+                  <td style="text-align: center;" class="cell-val">7.0&times;</td>
+                  <td>Closest European format-and-margin comp. Reflects defensive European grocery is priced at low-7&times;, in line with where Ahold's European half is implied.</td>
+                </tr>
+                <tr>
+                  <td><strong>Carrefour</strong><br><span style="color: var(--ink-3); font-size: 11px;">FR/EU hyper- and supermarket</span></td>
+                  <td>Euronext Paris</td>
+                  <td style="text-align: center;" class="cell-val">5.5&times;</td>
+                  <td>Lower-quality European peer; structurally weaker margins. Floor for the European format.</td>
+                </tr>
+                <tr style="background: var(--paper-3); border-top: 2px solid var(--ahold);">
+                  <td colspan="4"><strong style="color: var(--ahold-deep);">The takeaway.</strong> US-listed grocers cluster at 8&times;+ (Kroger floor, Walmart and Costco premia from index weight and growth). European-listed grocers cluster at 5.5&times; to 7&times;. Ahold's 7.5&times; sits inside the European cluster despite ~60% of EBITDA being US. The mispricing is the listing, not the operational story.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 style="margin-top: var(--s-7); margin-bottom: var(--s-2); color: var(--navy-deep);">EBITDA margin &amp; scale, versus the same peer set</h3>
+          <p class="lede" style="margin-bottom: var(--s-3);">The multiple says Ahold is priced like a European grocer. The margin says it operates like the best of them. On EBITDA margin Ahold sits at or above every conventional-grocer peer, US or European &mdash; asset quality does not justify the discount, the listing does.</p>
+          <div class="table-wrap">
+            <table class="ct">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 200px;">Company</th>
+                  <th scope="col" style="text-align: right; width: 110px;">Revenue (FY)</th>
+                  <th scope="col" style="text-align: center; width: 120px;">EBITDA margin</th>
+                  <th scope="col">Read</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background: var(--ahold-bg);">
+                  <td><strong style="color: var(--ahold-deep);">Ahold Delhaize</strong><br><span style="color: var(--ink-3); font-size: 11px;">US + European grocery &middot; IFRS</span></td>
+                  <td style="text-align: right;">&euro;92.4bn</td>
+                  <td style="text-align: center;" class="cell-val">7.7%</td>
+                  <td><em>Subject.</em> Highest EBITDA margin in the conventional-grocer set &mdash; private-label strength, US scale (Food Lion, Stop &amp; Shop, Giant), cost discipline.</td>
+                </tr>
+                <tr>
+                  <td><strong>Kroger</strong><br><span style="color: var(--ink-3); font-size: 11px;">US conventional grocer &middot; US GAAP</span></td>
+                  <td style="text-align: right;">$147bn</td>
+                  <td style="text-align: center;" class="cell-val">~5.5%</td>
+                  <td>Closest US peer; thinner margin despite larger scale. Ahold's US business out-earns it.</td>
+                </tr>
+                <tr>
+                  <td><strong>Walmart</strong><br><span style="color: var(--ink-3); font-size: 11px;">US mass-market &middot; US GAAP</span></td>
+                  <td style="text-align: right;">$681bn</td>
+                  <td style="text-align: center;" class="cell-val">~6.5%</td>
+                  <td>Scale leader; Ahold's margin still sits above it, even before lease-accounting differences.</td>
+                </tr>
+                <tr>
+                  <td><strong>Tesco</strong><br><span style="color: var(--ink-3); font-size: 11px;">UK conventional grocer &middot; IFRS</span></td>
+                  <td style="text-align: right;">&pound;69bn</td>
+                  <td style="text-align: center;" class="cell-val">~6.3%</td>
+                  <td>Closest like-for-like (IFRS) format and margin comp; Ahold runs ~140bps higher on the same accounting basis.</td>
+                </tr>
+                <tr>
+                  <td><strong>Carrefour</strong><br><span style="color: var(--ink-3); font-size: 11px;">FR/EU hyper- and supermarket &middot; IFRS</span></td>
+                  <td style="text-align: right;">&euro;83bn</td>
+                  <td style="text-align: center;" class="cell-val">~4.7%</td>
+                  <td>The European margin floor; structurally weaker. Bottom of the comparable range.</td>
+                </tr>
+                <tr style="background: var(--paper-3); border-top: 2px solid var(--ahold);">
+                  <td colspan="4"><strong style="color: var(--ahold-deep);">The takeaway.</strong> Ahold posts the highest EBITDA margin of the conventional-grocer set on both sides of the Atlantic, yet trades at the European-grocer multiple (7.5&times; vs the 5.5&times;&ndash;8&times; cluster). Margin is the operational-quality check &mdash; and it passes, so the discount is the listing and investor base, not the business. <em>Caveat: IFRS reporters (Ahold, Tesco, Carrefour) capitalise leases under IFRS&nbsp;16, lifting EBITDA vs US-GAAP peers (Kroger, Walmart); the cleanest like-for-like read is Ahold against Tesco and Carrefour.</em></td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size: 10.5px; color: var(--ink-4); margin-top: var(--s-2); font-family: 'IBM Plex Mono', monospace; line-height: 1.5;">Source: Bloomberg (subject company); company filings and market data (peers). EBITDA margin = EBITDA &divide; revenue, latest reported fiscal year or LTM; adjusted / before-special-items where the company reports on that basis. Revenue shown in reporting currency; margins are currency-neutral. Figures rounded &mdash; for relative comparison, not valuation.</p>
+          </div>
+
+        </section>
+
+        <section class="section" aria-labelledby="ahold-timing">
+          <p class="section-label is-ahold">&sect; 2.1B, why now &amp; what would invalidate</p>
+          <h2 id="ahold-timing">The timing case, and the conditions that would invalidate the thesis</h2>
+          <p class="lede">Two questions every IC asks. <em>Why now?</em> &mdash; what is happening structurally in the next 12 to 18 months that did not exist 18 months ago. <em>What would make us wrong?</em> &mdash; the specific, falsifiable developments that should force us to exit or downgrade. The answers below are the operating circuit-breakers; if they trip, the thesis breaks.</p>
+
+          <div class="story-grid">
+            <article class="story-block is-ahold">
+              <h3>Why now</h3>
+              <ul>
+                <li><strong>US-business CEO transition.</strong> JJ Fleeman departs end-June 2026; succession opens the structural-review window mechanically.</li>
+                <li><strong>New SB Chair.</strong> Wiebe Draijer became Chair October 2025. New leadership at the start of its mandate is structurally more open to portfolio questions than a Chair defending a legacy.</li>
+                <li><strong>Akzo Nobel position (August 2025)</strong> opens the Dutch SB channel for the first time, the credible introduction route did not exist 12 months ago.</li>
+                <li><strong>Engagement from operating strength.</strong> FY25 EPS +32%, FCF +14%, 5th consecutive DPS raise. The conversation lands as "optimise a working asset," not as crisis intervention.</li>
+                <li><strong>US grocery competitive set is defined and stable.</strong> Walmart-Aldi-Kroger triangle settled. Reduces operating-disruption risk during the engagement window.</li>
+              </ul>
+            </article>
+            <article class="story-block is-ahold">
+              <h3>What would make us wrong</h3>
+              <ul>
+                <li><strong>Draijer reaffirms Dutch HQ within 12 months</strong> with explicit closure of any listing-venue review; the structural unlock is foreclosed.</li>
+                <li><strong>US-business CEO succession promotes a continuity candidate</strong> with an explicit mandate against structural change. Engagement window closes for ~24 months.</li>
+                <li><strong>Stop &amp; Shop turnaround stalls.</strong> US EBITDA &minus;15% or more on Walmart-Aldi share losses; the FCF base that underwrites the no-rerating IRR erodes.</li>
+                <li><strong>US grocery sector multiples compress below 8&times;</strong> (Albertsons-style). Kills the rerating math even if the listing happens.</li>
+                <li><strong>Akzo Nobel governance channel breaks down</strong> before Ahold engagement can land. The introduction route closes; the engagement timeline pushes 24 to 36 months.</li>
               </ul>
             </article>
           </div>
@@ -1797,7 +1956,7 @@
         <section class="section" aria-labelledby="ahold-charts">
           <p class="section-label is-ahold">&sect; 2.2, Market, cycle &amp; capital efficiency</p>
           <h2 id="ahold-charts">Share price, through-cycle multiple &amp; returns on capital</h2>
-          <p class="lede">Ten-year share price with EV/EBITDA overlay showing where today sits inside the ten-year multiple range, and the annual arc of ROIC / ROCE against cost of capital, the three lenses every Cevian engagement memo opens with.</p>
+          <p class="lede">Ten-year share price with EV/EBITDA overlay showing where today sits inside the multiple range, and the ten-year arc of ROIC and ROCE. The two lenses every Cevian engagement memo opens with.</p>
 
           <div class="chart-grid">
                         <div class="chart-box">
@@ -1831,25 +1990,25 @@
             <line x1="58" y1="208.4" x2="482" y2="208.4" stroke="#5a6478" stroke-width="0.7" stroke-dasharray="3,3" opacity="0.5"/>
             <text x="488.0" y="206.4" text-anchor="start" fill="#5a6478" font-size="8.5" font-family="IBM Plex Mono, monospace" letter-spacing="0.15">10y MIN</text>
             <text x="488.0" y="215.9" text-anchor="start" fill="#1a2436" font-size="9.5" font-family="IBM Plex Mono, monospace" font-weight="600">5.5×</text>
-            <path d="M 58.0,207.0 L 61.6,201.9 L 65.1,196.1 L 68.7,192.4 L 72.3,190.3 L 75.8,186.6 L 79.4,188.8 L 82.9,192.4 L 86.5,197.5 L 90.1,201.9 L 93.6,204.8 L 97.2,207.0 L 100.8,210.6 L 104.3,214.3 L 107.9,219.4 L 111.4,221.6 L 115.0,223.7 L 118.6,219.4 L 122.1,215.7 L 125.7,212.1 L 129.3,209.2 L 132.8,204.8 L 136.4,201.2 L 139.9,197.5 L 143.5,194.6 L 147.1,192.4 L 150.6,190.3 L 154.2,187.4 L 157.8,188.8 L 161.3,192.4 L 164.9,190.3 L 168.5,188.8 L 172.0,186.6 L 175.6,185.2 L 179.1,188.8 L 182.7,192.4 L 186.3,194.6 L 189.8,196.1 L 193.4,197.5 L 197.0,192.4 L 200.5,188.8 L 204.1,186.6 L 207.6,185.2 L 211.2,183.0 L 214.8,181.5 L 218.3,180.1 L 221.9,177.9 L 225.5,175.7 L 229.0,172.8 L 232.6,170.6 L 236.2,183.0 L 239.7,207.0 L 243.3,197.5 L 246.8,185.2 L 250.4,175.7 L 254.0,165.5 L 257.5,159.7 L 261.1,156.1 L 264.7,151.0 L 268.2,146.6 L 271.8,143.0 L 275.3,139.3 L 278.9,136.4 L 282.5,134.2 L 286.0,130.6 L 289.6,127.0 L 293.2,124.8 L 296.7,134.2 L 300.3,139.3 L 303.8,148.8 L 307.4,156.1 L 311.0,161.2 L 314.5,151.0 L 318.1,141.5 L 321.7,153.9 L 325.2,167.0 L 328.8,148.8 L 332.4,139.3 L 335.9,143.7 L 339.5,148.8 L 343.0,153.9 L 346.6,159.7 L 350.2,163.3 L 353.7,158.2 L 357.3,148.8 L 360.9,139.3 L 364.4,134.2 L 368.0,129.1 L 371.5,119.7 L 375.1,110.2 L 378.7,105.1 L 382.2,100.0 L 385.8,95.7 L 389.4,90.6 L 392.9,100.0 L 396.5,112.4 L 400.1,117.5 L 403.6,112.4 L 407.2,102.9 L 410.7,97.8 L 414.3,92.7 L 417.9,88.4 L 421.4,83.3 L 425.0,78.2 L 428.6,73.8 L 432.1,68.7 L 435.7,63.6 L 439.2,59.3 L 442.8,56.4 L 446.4,68.7 L 449.9,85.5 L 453.5,95.7 L 457.1,90.6 L 460.6,81.1 L 464.2,76.0 L 467.7,70.9 L 471.3,66.5 L 474.9,61.5 L 478.4,56.4 L 482.0,50.9 L 482.0,230.0 L 58.0,230.0 Z" fill="#2da94f" opacity="0.08"/>
-            <path d="M 58.0,207.0 L 61.6,201.9 L 65.1,196.1 L 68.7,192.4 L 72.3,190.3 L 75.8,186.6 L 79.4,188.8 L 82.9,192.4 L 86.5,197.5 L 90.1,201.9 L 93.6,204.8 L 97.2,207.0 L 100.8,210.6 L 104.3,214.3 L 107.9,219.4 L 111.4,221.6 L 115.0,223.7 L 118.6,219.4 L 122.1,215.7 L 125.7,212.1 L 129.3,209.2 L 132.8,204.8 L 136.4,201.2 L 139.9,197.5 L 143.5,194.6 L 147.1,192.4 L 150.6,190.3 L 154.2,187.4 L 157.8,188.8 L 161.3,192.4 L 164.9,190.3 L 168.5,188.8 L 172.0,186.6 L 175.6,185.2 L 179.1,188.8 L 182.7,192.4 L 186.3,194.6 L 189.8,196.1 L 193.4,197.5 L 197.0,192.4 L 200.5,188.8 L 204.1,186.6 L 207.6,185.2 L 211.2,183.0 L 214.8,181.5 L 218.3,180.1 L 221.9,177.9 L 225.5,175.7 L 229.0,172.8 L 232.6,170.6 L 236.2,183.0 L 239.7,207.0 L 243.3,197.5 L 246.8,185.2 L 250.4,175.7 L 254.0,165.5 L 257.5,159.7 L 261.1,156.1 L 264.7,151.0 L 268.2,146.6 L 271.8,143.0 L 275.3,139.3 L 278.9,136.4 L 282.5,134.2 L 286.0,130.6 L 289.6,127.0 L 293.2,124.8 L 296.7,134.2 L 300.3,139.3 L 303.8,148.8 L 307.4,156.1 L 311.0,161.2 L 314.5,151.0 L 318.1,141.5 L 321.7,153.9 L 325.2,167.0 L 328.8,148.8 L 332.4,139.3 L 335.9,143.7 L 339.5,148.8 L 343.0,153.9 L 346.6,159.7 L 350.2,163.3 L 353.7,158.2 L 357.3,148.8 L 360.9,139.3 L 364.4,134.2 L 368.0,129.1 L 371.5,119.7 L 375.1,110.2 L 378.7,105.1 L 382.2,100.0 L 385.8,95.7 L 389.4,90.6 L 392.9,100.0 L 396.5,112.4 L 400.1,117.5 L 403.6,112.4 L 407.2,102.9 L 410.7,97.8 L 414.3,92.7 L 417.9,88.4 L 421.4,83.3 L 425.0,78.2 L 428.6,73.8 L 432.1,68.7 L 435.7,63.6 L 439.2,59.3 L 442.8,56.4 L 446.4,68.7 L 449.9,85.5 L 453.5,95.7 L 457.1,90.6 L 460.6,81.1 L 464.2,76.0 L 467.7,70.9 L 471.3,66.5 L 474.9,61.5 L 478.4,56.4 L 482.0,50.9" fill="none" stroke="#2da94f" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
-            <path d="M 58.0,102.6 L 68.9,90.9 L 79.7,79.1 L 90.6,86.9 L 101.5,94.8 L 112.4,102.6 L 123.2,110.5 L 134.1,118.3 L 145.0,130.1 L 155.8,141.8 L 166.7,149.7 L 177.6,157.5 L 188.5,141.8 L 199.3,118.3 L 210.2,90.9 L 221.1,71.3 L 231.9,79.1 L 242.8,102.6 L 253.7,130.1 L 264.6,149.7 L 275.4,157.5 L 286.3,130.1 L 297.2,102.6 L 308.1,118.3 L 318.9,141.8 L 329.8,169.3 L 340.7,188.8 L 351.5,208.4 L 362.4,196.7 L 373.3,181.0 L 384.2,169.3 L 395.0,157.5 L 405.9,149.7 L 416.8,141.8 L 427.6,149.7 L 438.5,157.5 L 449.4,169.3 L 460.3,157.5 L 471.1,149.7 L 482.0,153.6" fill="none" stroke="#5a6478" stroke-width="1.3" stroke-dasharray="4,2.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
-            <circle cx="482.0" cy="50.9" r="3.8" fill="#2da94f" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="476.0" y="42.9" text-anchor="end" fill="#2da94f" font-size="11" font-family="IBM Plex Mono, monospace" font-weight="700">€40.95</text>
-            <circle cx="482.0" cy="153.6" r="3.2" fill="#1a2436" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="476.0" y="167.6" text-anchor="end" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" font-weight="600">6.9×</text>
+            <path d="M 58.0,207.0 L 61.5,201.9 L 65.0,196.1 L 68.5,192.4 L 72.0,190.3 L 75.5,186.6 L 79.0,188.8 L 82.5,192.4 L 86.0,197.5 L 89.5,201.9 L 93.0,204.8 L 96.5,207.0 L 100.0,210.6 L 103.6,214.3 L 107.1,219.4 L 110.6,221.6 L 114.1,223.7 L 117.6,219.4 L 121.1,215.7 L 124.6,212.1 L 128.1,209.2 L 131.6,204.8 L 135.1,201.2 L 138.6,197.5 L 142.1,194.6 L 145.6,192.4 L 149.1,190.3 L 152.6,187.4 L 156.1,188.8 L 159.6,192.4 L 163.1,190.3 L 166.6,188.8 L 170.1,186.6 L 173.6,185.2 L 177.1,188.8 L 180.6,192.4 L 184.1,194.6 L 187.7,196.1 L 191.2,197.5 L 194.7,192.4 L 198.2,188.8 L 201.7,186.6 L 205.2,185.2 L 208.7,183.0 L 212.2,181.5 L 215.7,180.1 L 219.2,177.9 L 222.7,175.7 L 226.2,172.8 L 229.7,170.6 L 233.2,183.0 L 236.7,207.0 L 240.2,197.5 L 243.7,185.2 L 247.2,175.7 L 250.7,165.5 L 254.2,159.7 L 257.7,156.1 L 261.2,151.0 L 264.7,146.6 L 268.2,143.0 L 271.8,139.3 L 275.3,136.4 L 278.8,134.2 L 282.3,130.6 L 285.8,127.0 L 289.3,124.8 L 292.8,134.2 L 296.3,139.3 L 299.8,148.8 L 303.3,156.1 L 306.8,161.2 L 310.3,151.0 L 313.8,141.5 L 317.3,153.9 L 320.8,167.0 L 324.3,148.8 L 327.8,139.3 L 331.3,143.7 L 334.8,148.8 L 338.3,153.9 L 341.8,159.7 L 345.3,163.3 L 348.8,158.2 L 352.3,148.8 L 355.9,139.3 L 359.4,134.2 L 362.9,129.1 L 366.4,119.7 L 369.9,110.2 L 373.4,105.1 L 376.9,100.0 L 380.4,95.7 L 383.9,90.6 L 387.4,100.0 L 390.9,112.4 L 394.4,117.5 L 397.9,112.4 L 401.4,102.9 L 404.9,97.8 L 408.4,92.7 L 411.9,88.4 L 415.4,83.3 L 418.9,78.2 L 422.4,73.8 L 425.9,68.7 L 429.4,63.6 L 432.9,59.3 L 436.4,56.4 L 440.0,68.7 L 443.5,85.5 L 447.0,95.7 L 450.5,90.6 L 454.0,81.1 L 457.5,76.0 L 461.0,70.9 L 464.5,66.5 L 468.0,61.5 L 471.5,56.4 L 475.0,50.9 L 478.5,85.2 L 482.0,87.5 L 482.0,230.0 L 58.0,230.0 Z" fill="#2da94f" opacity="0.08"/>
+            <path d="M 58.0,207.0 L 61.5,201.9 L 65.0,196.1 L 68.5,192.4 L 72.0,190.3 L 75.5,186.6 L 79.0,188.8 L 82.5,192.4 L 86.0,197.5 L 89.5,201.9 L 93.0,204.8 L 96.5,207.0 L 100.0,210.6 L 103.6,214.3 L 107.1,219.4 L 110.6,221.6 L 114.1,223.7 L 117.6,219.4 L 121.1,215.7 L 124.6,212.1 L 128.1,209.2 L 131.6,204.8 L 135.1,201.2 L 138.6,197.5 L 142.1,194.6 L 145.6,192.4 L 149.1,190.3 L 152.6,187.4 L 156.1,188.8 L 159.6,192.4 L 163.1,190.3 L 166.6,188.8 L 170.1,186.6 L 173.6,185.2 L 177.1,188.8 L 180.6,192.4 L 184.1,194.6 L 187.7,196.1 L 191.2,197.5 L 194.7,192.4 L 198.2,188.8 L 201.7,186.6 L 205.2,185.2 L 208.7,183.0 L 212.2,181.5 L 215.7,180.1 L 219.2,177.9 L 222.7,175.7 L 226.2,172.8 L 229.7,170.6 L 233.2,183.0 L 236.7,207.0 L 240.2,197.5 L 243.7,185.2 L 247.2,175.7 L 250.7,165.5 L 254.2,159.7 L 257.7,156.1 L 261.2,151.0 L 264.7,146.6 L 268.2,143.0 L 271.8,139.3 L 275.3,136.4 L 278.8,134.2 L 282.3,130.6 L 285.8,127.0 L 289.3,124.8 L 292.8,134.2 L 296.3,139.3 L 299.8,148.8 L 303.3,156.1 L 306.8,161.2 L 310.3,151.0 L 313.8,141.5 L 317.3,153.9 L 320.8,167.0 L 324.3,148.8 L 327.8,139.3 L 331.3,143.7 L 334.8,148.8 L 338.3,153.9 L 341.8,159.7 L 345.3,163.3 L 348.8,158.2 L 352.3,148.8 L 355.9,139.3 L 359.4,134.2 L 362.9,129.1 L 366.4,119.7 L 369.9,110.2 L 373.4,105.1 L 376.9,100.0 L 380.4,95.7 L 383.9,90.6 L 387.4,100.0 L 390.9,112.4 L 394.4,117.5 L 397.9,112.4 L 401.4,102.9 L 404.9,97.8 L 408.4,92.7 L 411.9,88.4 L 415.4,83.3 L 418.9,78.2 L 422.4,73.8 L 425.9,68.7 L 429.4,63.6 L 432.9,59.3 L 436.4,56.4 L 440.0,68.7 L 443.5,85.5 L 447.0,95.7 L 450.5,90.6 L 454.0,81.1 L 457.5,76.0 L 461.0,70.9 L 464.5,66.5 L 468.0,61.5 L 471.5,56.4 L 475.0,50.9 L 478.5,85.2 L 482.0,87.5" fill="none" stroke="#2da94f" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M 58.0,102.6 L 68.7,90.9 L 79.3,79.1 L 90.1,86.9 L 100.8,94.8 L 111.5,102.6 L 122.1,110.5 L 132.8,118.3 L 143.6,130.1 L 154.2,141.8 L 164.9,149.7 L 175.6,157.5 L 186.3,141.8 L 197.0,118.3 L 207.7,90.9 L 218.4,71.3 L 229.0,79.1 L 239.7,102.6 L 250.5,130.1 L 261.2,149.7 L 271.8,157.5 L 282.5,130.1 L 293.2,102.6 L 304.0,118.3 L 314.6,141.8 L 325.3,169.3 L 336.0,188.8 L 346.6,208.4 L 357.4,196.7 L 368.1,181.0 L 378.8,169.3 L 389.4,157.5 L 400.1,149.7 L 410.9,141.8 L 421.5,149.7 L 432.2,157.5 L 442.9,169.3 L 453.7,157.5 L 464.3,149.7 L 475.0,153.6 L 482.0,171.0" fill="none" stroke="#5a6478" stroke-width="1.3" stroke-dasharray="4,2.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+            <circle cx="482.0" cy="87.5" r="3.8" fill="#2da94f" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="476.0" y="79.5" text-anchor="end" fill="#2da94f" font-size="11" font-family="IBM Plex Mono, monospace" font-weight="700">€35.85</text>
+            <circle cx="482.0" cy="171.0" r="3.2" fill="#1a2436" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="476.0" y="185.0" text-anchor="end" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" font-weight="600">6.5×</text>
             <text x="58.0" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 16</text>
             <text x="142.8" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 18</text>
             <text x="227.6" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 20</text>
             <text x="312.4" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 22</text>
             <text x="397.2" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 24</text>
-            <text x="482.0" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 26</text>
+            <text x="482.0" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Jun 26</text>
             </svg>
-            <div class="chart-caption">Price range on chart: €17 to €41. Multiple: 10y MIN 5.5× · AVG 7.2× · MAX 9.0× · NOW 6.9×.</div>
+            <div class="chart-caption"><strong style="color: var(--ahold-deep);">Takeaway.</strong> Today's 6.5&times; sits below the 10-year average of 7.2&times;, so the listing-thesis upside is being priced into a multiple that is already on the cheaper side of its through-cycle range. Entry today is not at a cyclical peak. Price range on chart: &euro;17 to &euro;41. Multiple: 10y MIN 5.5&times; &middot; AVG 7.2&times; &middot; MAX 9.0&times; &middot; NOW 6.5&times;.</div>
             </div>
                         <div class="chart-box" style="margin-top:16px;">
-            <div class="chart-title" style="color:#2da94f;">② ROIC &amp; ROCE: Ten-Year Trend vs Cost of Capital</div>
-            <div class="chart-sub">Annual % returns on invested capital and capital employed. Shading shows value creation (green) where ROIC &gt; WACC and value destruction (red) where ROIC &lt; WACC.</div>
+            <div class="chart-title" style="color:#2da94f;">② ROIC &amp; ROCE: Ten-Year Trajectory</div>
+            <div class="chart-sub">Annual % returns on invested capital and capital employed, ten-year trajectory.</div>
             <svg class="chart-svg" viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(52, 10)">
               <line x1="0" y1="7" x2="18" y2="7" stroke="#2da94f" stroke-width="2.2" stroke-linecap="round"/>
@@ -1857,12 +2016,6 @@
               <text x="22" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">ROIC</text>
               <line x1="80" y1="7" x2="98" y2="7" stroke="#2da94f" stroke-width="1.4" stroke-dasharray="5,2.5" stroke-linecap="round" opacity="0.7"/>
               <text x="102" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">ROCE</text>
-              <line x1="160" y1="7" x2="178" y2="7" stroke="#8aa8c8" stroke-width="1.2" stroke-dasharray="4,2.5" stroke-linecap="round"/>
-              <text x="182" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">WACC 6.5%</text>
-              <rect x="260" y="2" width="10" height="10" fill="#4ade80" opacity="0.22" rx="1"/>
-              <text x="274" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Value creation</text>
-              <rect x="370" y="2" width="10" height="10" fill="#d45b5b" opacity="0.22" rx="1"/>
-              <text x="384" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Value destruction</text>
             </g>
             <line x1="52" y1="143.7" x2="520" y2="143.7" stroke="#d8dde7" stroke-width="0.5" opacity="0.25"/>
             <text x="46.0" y="146.7" text-anchor="end" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace">5%</text>
@@ -1873,18 +2026,7 @@
             <line x1="52" y1="38.0" x2="520" y2="38.0" stroke="#d8dde7" stroke-width="0.5" opacity="0.25"/>
             <text x="46.0" y="41.0" text-anchor="end" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace">20%</text>
             <line x1="52" y1="178.9" x2="520" y2="178.9" stroke="#9aa3b2" stroke-width="0.8" opacity="0.5"/>
-            <path d="M 52.0,119.0 L 104.0,114.1 L 104.0,133.1 L 52.0,133.1 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 104.0,114.1 L 156.0,119.0 L 156.0,133.1 L 104.0,133.1 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 156.0,119.0 L 208.0,122.5 L 208.0,133.1 L 156.0,133.1 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 208.0,122.5 L 260.0,128.9 L 260.0,133.1 L 208.0,133.1 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 260.0,128.9 L 312.0,121.1 L 312.0,133.1 L 260.0,133.1 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 312.0,121.1 L 364.0,131.0 L 364.0,133.1 L 312.0,133.1 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 364.0,131.0 L 386.3,133.1 L 364.0,133.1 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 386.3,133.1 L 416.0,135.9 L 416.0,133.1 Z" fill="#d45b5b" opacity="0.20"/>
-            <path d="M 416.0,135.9 L 468.0,138.0 L 468.0,133.1 L 416.0,133.1 Z" fill="#d45b5b" opacity="0.20"/>
-            <path d="M 468.0,138.0 L 520.0,145.1 L 520.0,133.1 L 468.0,133.1 Z" fill="#d45b5b" opacity="0.20"/>
             <path d="M 52.0,104.9 L 104.0,100.0 L 156.0,102.8 L 208.0,107.0 L 260.0,112.7 L 312.0,102.8 L 364.0,115.5 L 416.0,120.4 L 468.0,123.2 L 520.0,130.3" fill="none" stroke="#2da94f" stroke-width="1.5" stroke-dasharray="5,2.5" opacity="0.65" stroke-linejoin="round" stroke-linecap="round"/>
-            <line x1="52" y1="133.1" x2="520" y2="133.1" stroke="#8aa8c8" stroke-width="1.3" stroke-dasharray="5,3" opacity="0.9"/>
             <path d="M 52.0,119.0 L 104.0,114.1 L 156.0,119.0 L 208.0,122.5 L 260.0,128.9 L 312.0,121.1 L 364.0,131.0 L 416.0,135.9 L 468.0,138.0 L 520.0,145.1" fill="none" stroke="#2da94f" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
             <circle cx="52.0" cy="119.0" r="3.2" fill="#2da94f" stroke="#ffffff" stroke-width="1.5"/>
             <text x="52.0" y="111.0" text-anchor="middle" fill="#2da94f" font-size="9.5" font-family="IBM Plex Mono, monospace" font-weight="700">8.5</text>
@@ -1918,11 +2060,11 @@
             <text x="520.0" y="220" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">2025</text>
             </svg>
             <div class="chart-caption" style="margin-top:6px;">
-              <span style="color:#5a6478; font-size:10px; letter-spacing:0.08em;">WACC DERIVATION:</span>
-              <span style="font-size:11.5px;">β ~0.7 (defensive grocery) × 5.5% ERP + 3.0% Rf + 4% after-tax cost of debt (40% weight). Risk-free rate is 10-year sovereign average (DE/UK/NL).</span>
+              <p style="margin: 0 0 var(--s-2) 0;"><strong style="color: var(--ahold-deep);">Takeaway. Ahold is a quality compounder.</strong> ROIC has held in the 7 to 9% range with no margin compression since FY18 and the gap to Kroger (compressed FY23 to 25) and Carrefour (structurally below US peers) has been widening since FY22. This is the operating evidence that the 9 to 10% no-rerating IRR (&sect; 2.4) is real cash-on-cash compounding, not a multiple bet. The quality is the reason the engagement is structural-listing rather than operational.</p>
             </div>
             </div>
           </div>
+
         </section>
 
         <section class="section" aria-labelledby="ahold-commit">
@@ -1950,18 +2092,18 @@
 
         <section class="section" aria-labelledby="ahold-return">
           <p class="section-label is-ahold">&sect; 2.4, Return decomposition</p>
-          <h2 id="ahold-return">What you compound while you wait, the Amadeus-shape return</h2>
-          <p class="lede">Headline +25% upside hides the question Cevian actually underwrites: <em>how does the return get built, and do I make money while waiting?</em> Show the no-rerating case first, so the catalyst is upside on top of a defensible base, not the entire thesis.</p>
+          <h2 id="ahold-return">What you compound while you wait, the compounder-shape return</h2>
+          <p class="lede">Headline +25% upside hides the question Cevian actually underwrites: <em>how does the return get built, and which assumptions get you to which level?</em> The base case requires no catalyst. The first catalyst layer requires a NYSE primary listing to drive a US-business rerating. The second catalyst layer requires a separate bol.com monetisation event. Each layer is independently defensible and separately removable.</p>
 
-          <p class="return-meta">Indicative 3-year IRR: ~9 to 10% no rerating &middot; ~14 to 15% catalyst</p>
+          <p class="return-meta">Indicative 3-year IRR: ~9 to 10% base &middot; ~13 to 14% with listing rerating &middot; ~14 to 15% with listing + bol.com</p>
 
           <div class="table-wrap">
             <table class="ct">
               <thead>
                 <tr>
-                  <th scope="col" style="width: 200px;">Return layer</th>
+                  <th scope="col" style="width: 220px;">Return layer</th>
                   <th scope="col" style="text-align: center; width: 130px;">Annual contribution</th>
-                  <th scope="col">Evidence (FY25 actuals, CapIQ-verified)</th>
+                  <th scope="col">Evidence and required assumptions</th>
                 </tr>
               </thead>
               <tbody>
@@ -1981,15 +2123,20 @@
                   <td>&euro;1.008bn in FY25; 5 consecutive years at &euro;1bn. ~2.8% of cap returned annually.</td>
                 </tr>
                 <tr>
-                  <td colspan="3" style="background: var(--paper-3);"><span class="return-summary">Subtotal: ~9 to 10% IRR, earned without any catalyst working.</span></td>
+                  <td colspan="3" style="background: var(--paper-3);"><span class="return-summary"><strong>Base case subtotal: ~9 to 10% IRR.</strong> Earned without any structural catalyst. No assumption required beyond status quo.</span></td>
                 </tr>
                 <tr>
-                  <td><strong>Catalyst layer (NYSE listing)</strong></td>
-                  <td style="text-align:center;" class="cell-val">+4 to 5%</td>
-                  <td>CRH precedent: ~30 to 40% multiple uplift over 3 years. Spread over a 3-year hold.</td>
+                  <td><strong>Catalyst 1: US listing rerating</strong></td>
+                  <td style="text-align:center;" class="cell-val">+3 to 4%</td>
+                  <td><em>Required assumption:</em> NYSE primary listing announced and effected, US-business multiple moves from group's blended ~7.5&times; toward Kroger-comparable ~9 to 10&times; over 3 years. CRH delivered ~85% TSR over two years post-listing-change including S&amp;P 500 inclusion. Spread thinly here: only US-share-of-EBITDA gets the uplift, applied over 3-year hold.</td>
                 </tr>
                 <tr>
-                  <td colspan="3" style="background: var(--ahold-bg);"><strong style="color: var(--ahold-deep);">Total catalyst IRR: ~14 to 15%.</strong> The catalyst is upside on a defensible base.</td>
+                  <td><strong>Catalyst 2: bol.com monetisation</strong></td>
+                  <td style="text-align:center;" class="cell-val">+1 to 1.5%</td>
+                  <td><em>Required assumption (separate):</em> bol.com sale, spin or partial IPO at ~18&times; EBITDA (still discount to Zalando ~25&times;). Worth ~&euro;3 to 4bn at that multiple, ~&euro;1bn uplift to group EV vs current implied ~15&times;. Independent of the listing change, can happen with or without it.</td>
+                </tr>
+                <tr>
+                  <td colspan="3" style="background: var(--ahold-bg);"><strong style="color: var(--ahold-deep);">Stack: Base ~9 to 10% &rarr; with Catalyst 1 ~13 to 14% &rarr; with both ~14 to 15%.</strong> Catalyst 2 adds modestly to a thesis that does not depend on it. Catalyst 1 is the structural one; if it fails, the base case still clears Cevian's hurdle.</td>
                 </tr>
               </tbody>
             </table>
@@ -2003,8 +2150,17 @@
           <div class="mech-box is-ahold">
             <p class="mech-eyebrow">The instrument &middot; live</p>
             <div class="mech-content">
-              <p><strong>The ask:</strong> NYSE primary listing (CRH model) or partial US-business spin, not break-up. <strong>Channel:</strong> Akzo Nobel position (Aug 2025) opens the Dutch SB. <strong>Channel into the SB:</strong> existing Cevian relationships in the Dutch corporate-governance circuit, plus the Vice Chair's North American grocery operating background, are the natural entry points. <strong>Catalyst window:</strong> the US-business CEO transition completes end-June 2026; the strategic-review window opens then.</p>
-              <p><strong>Quantified precedent:</strong> CRH (NYSE Sept 2023) saw 7&times; liquidity uplift, 4&times; US investor count, sizeable multiple expansion per UBS. Ferguson (NYSE May 2022) 4&times; liquidity / 5&times; US-investor uplift. Both moved primary listings to NYSE while retaining secondary, exactly the structure proposed for Ahold. The mechanical evidence is well-quantified.</p>
+              <p><strong>The ask.</strong> NYSE primary listing (CRH model), Euronext retained as secondary. Not a break-up, not an operational restructure. The board work is whether the Dutch listing is the right capital-markets home for a business earning ~60% of EBITDA in the US.</p>
+              <p><strong>Channel into the supervisory board.</strong> Cevian's August 2025 Akzo Nobel position has already opened the Dutch corporate-governance circuit, this is the natural entry route. The Vice Chair's North American grocery operating background is the second relationship hook. <strong>Catalyst window:</strong> the US-business CEO transition completes end-June 2026, opening the strategic-review window.</p>
+            </div>
+          </div>
+
+          <div class="mech-box is-ahold" style="margin-top:var(--s-4);">
+            <p class="mech-eyebrow">The CRH precedent &middot; what happened, what changed, did it rerate?</p>
+            <div class="mech-content">
+              <p><strong>What CRH did, and what it produced.</strong> Irish-domiciled building-materials group with ~75% of EBITDA in North America. Announced March 2023, shareholder-approved June 2023, NYSE primary effective <strong>25 September 2023</strong>; Standard LSE listing retained, Euronext Dublin de-listed. The mechanism then ran in two stages: a listing-driven re-rating through 2024 as the US register filled in (US ownership crossed 50% by June 2024, FPI status lost 1 January 2025), then index-driven flow on <strong>S&amp;P 500 inclusion (22 December 2025)</strong>. <strong>Cumulative TSR ~85% over the two years</strong>, with <strong>+27% vs the S&amp;P 500 in 2025 alone</strong>. Goodbody and RBC notes through 2024 to 25 explicitly framed the move as "rerating towards (and beyond) peers."</p>
+              <p><strong>Why it transfers to Ahold.</strong> Same shape (European primary listing for a business earning the majority of EBITDA in the US), same structural fix (NYSE primary, secondary retained), same two-stage mechanism (listing then index inclusion). The differences are domicile (Dutch vs Irish, mechanically harder, fewer sectoral precedents) and sector tailwind (CRH had US infrastructure spend, Ahold has US grocery comping at trend). The mechanical evidence that the trade works is good. The Cevian-specific question is whether the Dutch SB will entertain it.</p>
+              <p><strong>Bluebell reality.</strong> 2023 public letter put the SB on defensive footing toward all activist contact. Cevian's first letter must distinguish the constructive-engagement model explicitly.</p>
             </div>
           </div>
         </section>
@@ -2012,40 +2168,28 @@
         <section class="section" aria-labelledby="ahold-100">
           <p class="section-label is-ahold">&sect; 2.6, First 100 days</p>
           <h2 id="ahold-100">From investment idea to engagement plan</h2>
-          <p class="lede">Cevian historically averages 12 to 18 months between initial position-building and first SB-level engagement. The "first 100 days" framing is therefore <em>diligence-and-positioning</em>, not engagement itself.</p>
+          <p class="lede">A live engagement, not a probe. The 100 days are <em>diligence-and-positioning</em> toward a single board-level conversation, organised on the Cevian framework: <strong>Scale</strong> the position to a meaningful stake, <strong>Test</strong> the structural ask through informal channels, <strong>Monitor</strong> the catalyst window. (Detailed workstreams retained on internal memo.)</p>
 
-          <div class="grid-2">
+          <div class="grid-3">
             <article class="card is-ahold">
-              <p class="card-label">Days 1 to 30 &middot; Position &amp; diligence</p>
+              <p class="card-label" style="color: var(--ahold-deep);">SCALE &middot; Days 1 to 30</p>
               <div class="card-body">
-                <p><strong>(1) Position-building.</strong> 3 to 4% over a 15-day window via low-impact algo-VWAP. &euro;1.1 to 1.45bn check. Stay below 5% to avoid Dutch substantial-holding disclosure trigger; cross 3% Wft notification threshold knowingly.</p>
-                <p><strong>(2) Operating-segment deep dive.</strong> Standalone US-business model: revenue by banner, operating margin trajectory, capital intensity, online economics post-Prism. Standalone Europe model with bol.com separated. Output: 30-page internal investment memo.</p>
-                <p><strong>(3) Listing-mechanics diligence.</strong> Engage Cravath / Skadden (US) plus Allen &amp; Overy (Dutch) on three structures: NYSE primary plus Euronext secondary (CRH); partial US-business IPO (T-Mobile precedent); ADR upgrade.</p>
+                <p><strong>(1) Build to 3 to 5%</strong> via low-impact algo-VWAP. Cross 3% Wft notification threshold knowingly; stay under 5% Dutch substantial-holding trigger.</p>
+                <p><strong>(2) Listing-mechanics diligence.</strong> Cravath / Skadden (US) and Allen &amp; Overy (Dutch) on the three viable structures (NYSE primary, partial US IPO, ADR upgrade). Default recommendation: NYSE primary + Euronext secondary, the CRH structure.</p>
               </div>
             </article>
             <article class="card is-ahold">
-              <p class="card-label">Days 31 to 60 &middot; Precedent &amp; stakeholders</p>
+              <p class="card-label" style="color: var(--ahold-deep);">TEST &middot; Days 31 to 70</p>
               <div class="card-body">
-                <p><strong>(4) Precedent benchmarking.</strong> Quantify CRH (Sept 2023), Ferguson (May 2022), Flutter (May 2024) at trade-flow / institutional-ownership / multiple-rerating level. Engage 2 to 3 sell-side analysts on Ahold-specific listing-change rerating modelling.</p>
-                <p><strong>(5) Stakeholder map.</strong> Top 30 holders by likely stance. Map the Supervisory Board by relevant background: which members come from US grocery / Dutch corporate-governance / digital retail experience, and where the Cevian engagement narrative lands most naturally. Held internally, never tabled.</p>
-                <p><strong>(6) US-CEO transition tracking.</strong> The US-business CEO change completes end-June 2026. Successor identification matters: an internal Food Lion-track operator vs an external US grocery veteran shifts the conversation.</p>
+                <p><strong>(3) Map the Supervisory Board</strong> by background. Identify the SB member with US grocery operating credentials as the natural first contact, the listing thesis lands more cleanly through someone who would naturally champion it.</p>
+                <p><strong>(4) First private contact.</strong> 8-10 page memo with quantified CRH precedent and Ahold-specific listing-change modelling. Akzo Nobel-style engagement language. Never an open letter at this stage.</p>
               </div>
             </article>
             <article class="card is-ahold">
-              <p class="card-label">Days 61 to 100 &middot; First contact &amp; sizing</p>
+              <p class="card-label" style="color: var(--ahold-deep);">MONITOR &middot; Days 71 to 100</p>
               <div class="card-body">
-                <p><strong>(7) First SB contact.</strong> Private letter or in-person meeting, never an open letter. The first conversation is best routed through a Supervisory Board member with North American operating credentials, where the US-listing thesis lands as a question they would naturally champion. Preparation: 8 to 10 page memo with US-listing precedent quantification, segment-level valuation analysis, Akzo Nobel-style engagement language.</p>
-                <p><strong>(8) Second meeting target: the Chair.</strong> The Dutch establishment relationship is what Cevian builds in this window.</p>
-                <p><strong>(9) Position-sizing decision (Day 90).</strong> Hold at 3 to 4%; build to 5% (Dutch substantial-holding threshold); or build to 7 to 9% (concentrated stake). Default: stay at 3 to 5% unless meetings produce active resistance.</p>
-              </div>
-            </article>
-            <article class="card is-ahold">
-              <p class="card-label">Decisions to be made by Day 100</p>
-              <div class="card-body">
-                <p><strong>(A) Listing structure preference.</strong> NYSE primary (CRH) vs partial US-business IPO vs ADR upgrade. <strong>Cevian's recommendation:</strong> NYSE primary, Euronext secondary, simplest to execute, cleanest precedent.</p>
-                <p><strong>(B) Public vs private.</strong> Default private. Trigger to go public: SB rejects on principle without engaging on substance.</p>
-                <p><strong>(C) Position size.</strong> Final commitment level set at Day 100. Range: 3 to 5% (low-friction) vs 7 to 9% (concentrated).</p>
-                <p><strong>Time-to-crystallisation:</strong> 24 to 36 months from position to NYSE primary listing announcement. CRH took 18 months from board decision to listing.</p>
+                <p><strong>(5) US-CEO transition (end-June 2026).</strong> Successor identification reshapes the conversation, an internal Food Lion-track operator vs an external US grocery veteran is a different dialogue.</p>
+                <p><strong>(6) Day 100 decision: position size.</strong> Default 3 to 5%; concentrate to 7 to 9% only if meetings produce active resistance. <em>Time-to-crystallisation:</em> 24 to 36 months (CRH took 18).</p>
               </div>
             </article>
           </div>
@@ -2104,8 +2248,12 @@
 
         <section class="section" aria-labelledby="dhl-setup">
           <p class="section-label is-dhl">&sect; 3.1, The setup</p>
-          <h2 id="dhl-setup">Five businesses: one crown jewel, one run-off, three in the middle</h2>
-          <p class="lede">Standalone Express at FedEx 10&times; EBITDA implies &euro;45bn EV, clearing more than half the group EV (&euro;80bn) on its own. The other four divisions cover the residual &euro;35bn at conservative peer multiples, meaning even the no-growth, no-rerating case clears the price. The group trades 7.8&times; EV/EBITDA against FedEx and UPS at 10 to 11&times;, a discount that has nothing to do with operating quality (Express is best-in-class on margin) and everything to do with the conglomerate structure and the state-shareholder overhang.</p>
+          <h2 id="dhl-setup">A process question, not a valuation question</h2>
+          <p class="lede"><strong>What DHL owns.</strong> Five businesses inside one Aufsichtsrat structure. <strong>Express</strong>: global time-definite air freight, ~&euro;4.5bn EBITDA at 11.8% margin, structurally comparable to FedEx and UPS. <strong>Forwarding</strong>: asset-light freight broking, DSV and Kuehne+Nagel peers. <strong>Supply Chain</strong>: contract logistics, GXO and XPO peers. <strong>eCommerce</strong>: cross-border parcel networks. <strong>Post &amp; Parcel Germany (PPG)</strong>: legacy regulated postal under universal-service obligation, union-protected, structurally low-margin.</p>
+
+          <p class="lede"><strong>Why the conglomerate trades at a discount.</strong> The group is valued at 7.8&times; EV/EBITDA against FedEx and UPS at 10 to 11&times;. The discount is structural, not operational: 17.73% KfW state holding (passive financial, but a practical demerger-vote constraint), Mitbestimmung labour board, and the inherent multiple-blending that comes from stapling an 11.8%-margin global network to a 4%-margin regulated postal business. The market is correctly pricing the conglomerate. Express margins are best-in-class.</p>
+
+          <p class="lede"><strong>The thesis is process, not arithmetic.</strong> The conservative SOTP at peer multiples clears the price by ~5%. <em>That is necessary but nowhere near sufficient.</em> The actual question is whether Cevian can credibly turn an Express strategic review into a real Aufsichtsrat workstream, given a state shareholder, co-determined labour, and a CEO who has not signalled appetite. Without that, mid-single-digit IRR is what you get. The first 100 days exist to test the binary; if the signal does not come, the position exits. <strong>DHL is in the book on the option, not on the SOTP.</strong></p>
 
           <div class="story-grid">
             <article class="story-block is-dhl">
@@ -2119,14 +2267,193 @@
               </ul>
             </article>
             <article class="story-block is-dhl">
-              <h3>Segment SOTP at peer multiples</h3>
+              <h3>The first 100 days are the decision</h3>
               <ul>
-                <li><strong>Express</strong> &middot; &euro;4.5bn EBITDA &times; 10&times; (FedEx) = &euro;45bn EV</li>
-                <li><strong>Forwarding</strong> &middot; &euro;1.4bn &times; 12&times; (DSV/K+N average) = &euro;17bn</li>
-                <li><strong>Supply Chain</strong> &middot; &euro;1.1bn &times; 11&times; (GXO/XPO) = &euro;12bn</li>
-                <li><strong>eCommerce</strong> &middot; &euro;0.6bn &times; 8&times; = &euro;5bn</li>
-                <li><strong>PPG</strong> &middot; &euro;1.0bn &times; 5&times; (PostNL-style) = &euro;5bn</li>
-                <li>Sum-of-parts EV ~&euro;84bn vs current ~&euro;80bn group EV</li>
+                <li>SOTP at peer multiples implies ~&euro;84bn EV vs current &euro;80bn &mdash; the math alone is not the thesis</li>
+                <li>Test: is there an Aufsichtsrat sub-committee willing to receive an SOTP framing?</li>
+                <li>If yes: process becomes real, IRR transitions from base ~7% to catalyst ~9 to 11%</li>
+                <li>If no: position exits in 100 days. Probe sizing only</li>
+              </ul>
+            </article>
+          </div>
+
+          <h3 style="margin-top: var(--s-7); margin-bottom: var(--s-2); color: var(--navy-deep);">Pre-separation vs post-separation: where the value actually comes from</h3>
+          <p class="lede" style="margin-bottom: var(--s-3);">The SOTP at peer multiples clears the price by ~5%. That is the ceiling on a peer-multiple thesis. The catalyst is not arithmetic, it is process: a separation announcement that lets Express stand alone and lets the four other divisions trade as themselves, not as components of a conglomerate.</p>
+
+          <div class="table-wrap">
+            <table class="ct">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 240px;">Stage</th>
+                  <th scope="col" style="text-align: right; width: 110px;">EV</th>
+                  <th scope="col" style="text-align: center; width: 110px;">Per share</th>
+                  <th scope="col">What changes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>① Today, conglomerate</strong></td>
+                  <td style="text-align: right;" class="cell-val">&euro;80bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;50</td>
+                  <td>Group at 7.8&times; blended EBITDA. Market correctly prices KfW 17.73% holding, Mitbestimmung labour board, and the multiple-blending that comes from stapling Express to PPG. <em>This is not a mispricing.</em></td>
+                </tr>
+                <tr>
+                  <td><strong>② Pre-separation SOTP</strong><br><span style="color: var(--ink-3); font-size: 11px;">Conservative peer multiples, no rerating credit</span></td>
+                  <td style="text-align: right;" class="cell-val">&euro;84bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;53</td>
+                  <td>Express &euro;45bn @ 10&times; · Forwarding &euro;17bn @ 12&times; · Supply Chain &euro;12bn @ 11&times; · eCommerce &euro;5bn @ 8&times; · PPG &euro;5bn @ 5&times;. Sum of segments at peer medians. <strong>~5% to the price. Necessary, not sufficient.</strong></td>
+                </tr>
+                <tr style="background: var(--paper-3); border-top: 2px solid var(--dhl);">
+                  <td><strong style="color: var(--dhl-deep);">③ Post-separation Express standalone</strong><br><span style="color: var(--ink-3); font-size: 11px;">Three operators worldwide, B2B time-critical, hub-and-aircraft</span></td>
+                  <td style="text-align: right; color: var(--dhl-deep);" class="cell-val">+&euro;7bn</td>
+                  <td style="text-align: center; color: var(--dhl-deep);" class="cell-val">+&euro;6</td>
+                  <td><strong>The Express multiple bridge:</strong> &euro;4.5bn EBITDA &times; (10&times; embedded &rarr; 11.5&times; standalone) = +&euro;7bn. Why standalone clears 11&times;: (a) trades on US tape alongside FedEx 9.5&times;, UPS 11&times;; (b) own dividend and buyback; (c) own management compensation tied to network economics, not group politics; (d) no PPG margin drag in headline numbers.</td>
+                </tr>
+                <tr style="background: var(--paper-3);">
+                  <td><strong style="color: var(--dhl-deep);">④ Post-separation RemainCo discount removal</strong><br><span style="color: var(--ink-3); font-size: 11px;">Forwarding, Supply Chain, eCommerce, PPG each trade as themselves</span></td>
+                  <td style="text-align: right; color: var(--dhl-deep);" class="cell-val">+&euro;2bn</td>
+                  <td style="text-align: center; color: var(--dhl-deep);" class="cell-val">+&euro;2</td>
+                  <td>Forwarding rerates toward DSV 13&times; once detached from PPG drag (~+&euro;1bn). Supply Chain visible to GXO/XPO investor base (~+&euro;1bn). eCommerce and PPG static at peer multiples.</td>
+                </tr>
+                <tr style="background: var(--dhl-bg); border-top: 2px solid var(--dhl);">
+                  <td><strong style="color: var(--dhl-deep);">Catalyst-case EV (① + ③ + ④)</strong></td>
+                  <td style="text-align: right; color: var(--dhl-deep);" class="cell-val">&euro;93bn</td>
+                  <td style="text-align: center; color: var(--dhl-deep);" class="cell-val">&euro;58</td>
+                  <td><strong>+16% vs today.</strong> Of that, ~5% is peer multiples on the existing structure (already deserved); ~11% is the separation announcement that unlocks Express standalone trading and removes the RemainCo blend. <strong>The catalyst, not the SOTP, is the thesis.</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 style="margin-top: var(--s-7); margin-bottom: var(--s-2); color: var(--navy-deep);">Why separation: the segment-return dispersion</h3>
+          <p class="lede" style="margin-bottom: var(--s-3);">The structural case for separation is not the SOTP arithmetic. It is the dispersion of returns on capital across divisions that share one balance sheet, one management compensation system, and one investor base. Express earns a premium global-network return; PPG earns a regulated-postal return. Stapling them together compresses the multiple of the better business and subsidises the worse one.</p>
+
+          <div class="table-wrap">
+            <table class="ct">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 130px;">Division</th>
+                  <th scope="col" style="text-align: center; width: 100px;">EBITDA margin</th>
+                  <th scope="col" style="text-align: center; width: 110px;">Segment ROIC</th>
+                  <th scope="col" style="text-align: center; width: 100px;">Capital intensity</th>
+                  <th scope="col">Read</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color: var(--dhl);">Express</strong></td>
+                  <td style="text-align: center;" class="cell-val">11.8%</td>
+                  <td style="text-align: center; color: var(--positive);" class="cell-val">~20%+</td>
+                  <td style="text-align: center;">High</td>
+                  <td>Best-in-class global-network economics. Three operators worldwide, FedEx/UPS-comparable basis. <strong>Earns its cost of capital several times over through the cycle.</strong></td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--dhl);">Forwarding</strong></td>
+                  <td style="text-align: center;" class="cell-val">~6%</td>
+                  <td style="text-align: center; color: var(--positive);" class="cell-val">~25%+</td>
+                  <td style="text-align: center;">Low</td>
+                  <td>Asset-light, capital-efficient, cyclical. DSV / K+N peer set. Earns well above its cost of capital; cycle suppresses headline margin but not return on capital.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--dhl);">Supply Chain</strong></td>
+                  <td style="text-align: center;" class="cell-val">~7%</td>
+                  <td style="text-align: center;" class="cell-val">~12%</td>
+                  <td style="text-align: center;">Medium</td>
+                  <td>Contract logistics. GXO/XPO peers. Earns above its cost of capital, modestly.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--dhl);">eCommerce</strong></td>
+                  <td style="text-align: center;" class="cell-val">~4%</td>
+                  <td style="text-align: center;" class="cell-val">~8%</td>
+                  <td style="text-align: center;">Medium</td>
+                  <td>Cross-border parcel. Marginal returns. Cycle-sensitive.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--dhl);">Post &amp; Parcel Germany</strong></td>
+                  <td style="text-align: center;" class="cell-val">~4%</td>
+                  <td style="text-align: center; color: var(--negative);" class="cell-val">~5%</td>
+                  <td style="text-align: center;">High</td>
+                  <td>Regulated postal, USO, co-determined labour. <strong>Earns at or below cost of capital.</strong> Should not be valued the same way as Express, and the market does not.</td>
+                </tr>
+                <tr style="background: var(--paper-3); border-top: 2px solid var(--dhl);">
+                  <td colspan="5"><strong style="color: var(--dhl-deep);">The structural argument.</strong> Express ROIC is roughly 4&times; PPG ROIC. They do not belong on one balance sheet at one multiple. The market knows this and applies a discount that is rational given the current structure. The thesis is that Cevian's engagement can change the structure, not that the market is wrong about the current one. <em>Source: company segment disclosures FY25; ROIC estimated using divisional invested capital allocations.</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 style="margin-top: var(--s-7); margin-bottom: var(--s-2); color: var(--navy-deep);">EBITDA margin &amp; scale, versus integrated-network peers</h3>
+          <p class="lede" style="margin-bottom: var(--s-3);">DHL is not a margin-repair story. At group level it earns a best-in-class logistics margin, level with UPS and above FedEx; within the group, Express runs at the FedEx/UPS-comparable level while Post &amp; Parcel Germany dilutes. The case is the ROIC and multiple dispersion an SOTP would surface (division economics above), not a depressed group margin.</p>
+          <div class="table-wrap">
+            <table class="ct">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 200px;">Company</th>
+                  <th scope="col" style="text-align: right; width: 110px;">Revenue (FY)</th>
+                  <th scope="col" style="text-align: center; width: 120px;">EBITDA margin</th>
+                  <th scope="col">Read</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background: var(--dhl-bg);">
+                  <td><strong style="color: var(--dhl-deep);">DHL Group</strong><br><span style="color: var(--ink-3); font-size: 11px;">Express + Forwarding + Post &amp; Parcel Germany</span></td>
+                  <td style="text-align: right;">&euro;82.5bn</td>
+                  <td style="text-align: center;" class="cell-val">13.4%</td>
+                  <td><em>Subject.</em> Group margin in line with the best integrated networks; Express alone runs ~12% (crown jewel), PPG dilutes.</td>
+                </tr>
+                <tr>
+                  <td><strong>UPS</strong><br><span style="color: var(--ink-3); font-size: 11px;">US integrated parcel / express</span></td>
+                  <td style="text-align: right;">$89bn</td>
+                  <td style="text-align: center;" class="cell-val">13.4%</td>
+                  <td>Closest integrated peer; near-identical group EBITDA margin.</td>
+                </tr>
+                <tr>
+                  <td><strong>FedEx</strong><br><span style="color: var(--ink-3); font-size: 11px;">US integrated express</span></td>
+                  <td style="text-align: right;">$88bn</td>
+                  <td style="text-align: center;" class="cell-val">~12%</td>
+                  <td>Integrated express; slightly lower, multi-year cost-out programme in progress.</td>
+                </tr>
+                <tr>
+                  <td><strong>DSV / Kuehne+Nagel</strong><br><span style="color: var(--ink-3); font-size: 11px;">Asset-light freight forwarders</span></td>
+                  <td style="text-align: right; color: var(--ink-3);">&mdash;</td>
+                  <td style="text-align: center; color: var(--ink-3); font-size: 11px;">different basis</td>
+                  <td>Forwarders earn on gross (pass-through) revenue, so headline EBITDA margin runs low- to high-single digits and is <em>not</em> comparable to integrated-network margin. Right comp for the Forwarding division, not the group.</td>
+                </tr>
+                <tr style="background: var(--paper-3); border-top: 2px solid var(--dhl);">
+                  <td colspan="4"><strong style="color: var(--dhl-deep);">The takeaway.</strong> At 13.4% group EBITDA margin DHL sits level with UPS and above FedEx &mdash; a structurally high-margin operator, not a turnaround. The mispricing the thesis targets is internal: Express earns multiples of its cost of capital while PPG earns at or below it, and one balance sheet at one multiple obscures that. The unlock is structural (SOTP), reinforcing the division economics above.</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size: 10.5px; color: var(--ink-4); margin-top: var(--s-2); font-family: 'IBM Plex Mono', monospace; line-height: 1.5;">Source: Bloomberg (subject company); company filings and market data (peers). EBITDA margin = EBITDA &divide; revenue, latest reported fiscal year or LTM; adjusted / before-special-items where the company reports on that basis. Revenue shown in reporting currency; margins are currency-neutral. Figures rounded &mdash; for relative comparison, not valuation.</p>
+          </div>
+
+        </section>
+
+        <section class="section" aria-labelledby="dhl-timing">
+          <p class="section-label is-dhl">&sect; 3.1B, why now &amp; what would invalidate</p>
+          <h2 id="dhl-timing">The timing case, and the conditions that would invalidate the thesis</h2>
+          <p class="lede">DHL is the most timing-sensitive name in the deck because the thesis is process, not arithmetic. The Aufsichtsrat workstream either exists in this window or it does not. The invalidators below are the developments that would close the window before the engagement can land.</p>
+
+          <div class="story-grid">
+            <article class="story-block is-dhl">
+              <h3>Why now</h3>
+              <ul>
+                <li><strong>Strategy 2030 review window is open.</strong> Strategy Committee met 8&times; in 2025 on the strategy refresh. The natural workstream is in flight, not future, this is the only window where an SOTP framing lands as part of a live workstream rather than as an unsolicited intervention.</li>
+                <li><strong>Fresh Aufsichtsrat leadership.</strong> Suder (Chair, May 2025) and Hiesinger (Strategy Committee Chair, May 2025) are 12 months into their mandates. New Chairs are structurally more receptive to portfolio dialogue than entrenched ones.</li>
+                <li><strong>KfW is what it is, and we now know it.</strong> 17.73% currently, mechanically <em>up</em> from the 2024 sell-down level via buyback-driven share retirement (denominator shrank, KfW's absolute stake flat). Passive financial holder, no special voting rights, no reload signalled. This is the post-2024 equilibrium: a residual privatisation overhang on a federal-budget timeline, not a strategic anchor. The governance read is sharper than it has been: 17.73% blocks a <em>demerger</em> but not a <em>sale</em>, which channels the engagement ask toward sale-led structures.</li>
+                <li><strong>Balance-sheet pressure is mounting.</strong> Net debt &euro;13.3bn FY21 to &euro;22.4bn FY25. Rising leverage is a natural board-level rationale for portfolio action that did not exist three years ago.</li>
+                <li><strong>Engagement from operating strength.</strong> Express margins are post-pandemic-normalised at 11.8%; FedEx and UPS comp set is stable. The SOTP framing lands cleanly without cyclical noise.</li>
+              </ul>
+            </article>
+            <article class="story-block is-dhl">
+              <h3>What would make us wrong</h3>
+              <ul>
+                <li><strong>The binary fails.</strong> Strategy Committee declines to receive an SOTP framing in the first 100 days. <em>This is the exit signal.</em></li>
+                <li><strong>KfW signals it will vote against</strong> any demerger of Express, or Berlin publicly reasserts a long-term strategic-anchor view. The sale path stays open, but the demerger optionality closes and the engagement narrows materially.</li>
+                <li><strong>Verdi extracts a wage settlement</strong> that compresses PPG margins meaningfully and activates Mitbestimmung-side opposition to any restructuring. The labour-board veto becomes binding.</li>
+                <li><strong>Express margins compress structurally, not cyclically.</strong> &gt;100bps below FedEx/UPS spread for two consecutive years. The crown-jewel narrative breaks; the SOTP collapses.</li>
+                <li><strong>CEO publicly reaffirms "diversified portfolio"</strong> with explicit anti-separation language at FY25 results or the AGM. The thesis fails on management opposition.</li>
+                <li><strong>Capital allocation pivot to dilutive M&amp;A</strong> or material reduction in the buyback programme. Signals the board is reinvesting in the integrated structure rather than rationalising it.</li>
               </ul>
             </article>
           </div>
@@ -2135,7 +2462,7 @@
         <section class="section" aria-labelledby="dhl-charts">
           <p class="section-label is-dhl">&sect; 3.2, Market, cycle &amp; capital efficiency</p>
           <h2 id="dhl-charts">Share price, through-cycle multiple &amp; returns on capital</h2>
-          <p class="lede">Ten-year share price with EV/EBITDA overlay showing where today sits inside the ten-year multiple range, and the annual arc of ROIC / ROCE against cost of capital.</p>
+          <p class="lede">Ten-year share price with EV/EBITDA overlay showing where today sits inside the multiple range, and the ten-year arc of ROIC and ROCE.</p>
 
           <div class="chart-grid">
                         <div class="chart-box">
@@ -2169,11 +2496,11 @@
             <line x1="58" y1="223.4" x2="482" y2="223.4" stroke="#5a6478" stroke-width="0.7" stroke-dasharray="3,3" opacity="0.5"/>
             <text x="488.0" y="221.4" text-anchor="start" fill="#5a6478" font-size="8.5" font-family="IBM Plex Mono, monospace" letter-spacing="0.15">10y MIN</text>
             <text x="488.0" y="230.9" text-anchor="start" fill="#1a2436" font-size="9.5" font-family="IBM Plex Mono, monospace" font-weight="600">4.7×</text>
-            <path d="M 58.0,208.6 L 61.6,205.2 L 65.1,201.8 L 68.7,198.9 L 72.3,196.5 L 75.8,194.0 L 79.4,192.1 L 82.9,189.2 L 86.5,185.8 L 90.1,182.4 L 93.6,179.5 L 97.2,176.1 L 100.8,172.7 L 104.3,169.8 L 107.9,166.4 L 111.4,163.0 L 115.0,160.1 L 118.6,156.7 L 122.1,153.3 L 125.7,150.4 L 129.3,151.9 L 132.8,155.3 L 136.4,161.6 L 139.9,167.9 L 143.5,171.3 L 147.1,174.7 L 150.6,177.6 L 154.2,181.0 L 157.8,184.3 L 161.3,187.3 L 164.9,190.6 L 168.5,193.1 L 172.0,195.5 L 175.6,197.9 L 179.1,200.3 L 182.7,196.9 L 186.3,193.1 L 189.8,185.8 L 193.4,178.5 L 197.0,171.3 L 200.5,174.7 L 204.1,181.0 L 207.6,184.3 L 211.2,187.3 L 214.8,185.8 L 218.3,183.4 L 221.9,181.0 L 225.5,178.5 L 229.0,174.7 L 232.6,171.3 L 236.2,195.5 L 239.7,224.6 L 243.3,208.6 L 246.8,190.6 L 250.4,172.7 L 254.0,155.3 L 257.5,138.8 L 261.1,122.8 L 264.7,111.7 L 268.2,98.6 L 271.8,85.5 L 275.3,69.5 L 278.9,53.6 L 282.5,50.2 L 286.0,51.6 L 289.6,58.4 L 293.2,66.2 L 296.7,74.4 L 300.3,82.6 L 303.8,90.4 L 307.4,98.6 L 311.0,106.8 L 314.5,114.6 L 318.1,121.4 L 321.7,127.7 L 325.2,132.5 L 328.8,135.9 L 332.4,138.8 L 335.9,142.2 L 339.5,145.6 L 343.0,148.5 L 346.6,151.9 L 350.2,155.3 L 353.7,151.9 L 357.3,148.5 L 360.9,144.6 L 364.4,140.8 L 368.0,137.4 L 371.5,134.0 L 375.1,130.1 L 378.7,126.2 L 382.2,132.5 L 385.8,138.8 L 389.4,142.2 L 392.9,145.6 L 396.5,151.9 L 400.1,156.7 L 403.6,160.1 L 407.2,156.7 L 410.7,150.4 L 414.3,143.7 L 417.9,137.4 L 421.4,131.1 L 425.0,124.3 L 428.6,118.0 L 432.1,111.7 L 435.7,104.9 L 439.2,98.6 L 442.8,95.2 L 446.4,102.0 L 449.9,113.1 L 453.5,124.3 L 457.1,127.7 L 460.6,119.4 L 464.2,111.7 L 467.7,103.5 L 471.3,97.2 L 474.9,88.9 L 478.4,85.5 L 482.0,90.7 L 482.0,230.0 L 58.0,230.0 Z" fill="#c8102e" opacity="0.08"/>
-            <path d="M 58.0,208.6 L 61.6,205.2 L 65.1,201.8 L 68.7,198.9 L 72.3,196.5 L 75.8,194.0 L 79.4,192.1 L 82.9,189.2 L 86.5,185.8 L 90.1,182.4 L 93.6,179.5 L 97.2,176.1 L 100.8,172.7 L 104.3,169.8 L 107.9,166.4 L 111.4,163.0 L 115.0,160.1 L 118.6,156.7 L 122.1,153.3 L 125.7,150.4 L 129.3,151.9 L 132.8,155.3 L 136.4,161.6 L 139.9,167.9 L 143.5,171.3 L 147.1,174.7 L 150.6,177.6 L 154.2,181.0 L 157.8,184.3 L 161.3,187.3 L 164.9,190.6 L 168.5,193.1 L 172.0,195.5 L 175.6,197.9 L 179.1,200.3 L 182.7,196.9 L 186.3,193.1 L 189.8,185.8 L 193.4,178.5 L 197.0,171.3 L 200.5,174.7 L 204.1,181.0 L 207.6,184.3 L 211.2,187.3 L 214.8,185.8 L 218.3,183.4 L 221.9,181.0 L 225.5,178.5 L 229.0,174.7 L 232.6,171.3 L 236.2,195.5 L 239.7,224.6 L 243.3,208.6 L 246.8,190.6 L 250.4,172.7 L 254.0,155.3 L 257.5,138.8 L 261.1,122.8 L 264.7,111.7 L 268.2,98.6 L 271.8,85.5 L 275.3,69.5 L 278.9,53.6 L 282.5,50.2 L 286.0,51.6 L 289.6,58.4 L 293.2,66.2 L 296.7,74.4 L 300.3,82.6 L 303.8,90.4 L 307.4,98.6 L 311.0,106.8 L 314.5,114.6 L 318.1,121.4 L 321.7,127.7 L 325.2,132.5 L 328.8,135.9 L 332.4,138.8 L 335.9,142.2 L 339.5,145.6 L 343.0,148.5 L 346.6,151.9 L 350.2,155.3 L 353.7,151.9 L 357.3,148.5 L 360.9,144.6 L 364.4,140.8 L 368.0,137.4 L 371.5,134.0 L 375.1,130.1 L 378.7,126.2 L 382.2,132.5 L 385.8,138.8 L 389.4,142.2 L 392.9,145.6 L 396.5,151.9 L 400.1,156.7 L 403.6,160.1 L 407.2,156.7 L 410.7,150.4 L 414.3,143.7 L 417.9,137.4 L 421.4,131.1 L 425.0,124.3 L 428.6,118.0 L 432.1,111.7 L 435.7,104.9 L 439.2,98.6 L 442.8,95.2 L 446.4,102.0 L 449.9,113.1 L 453.5,124.3 L 457.1,127.7 L 460.6,119.4 L 464.2,111.7 L 467.7,103.5 L 471.3,97.2 L 474.9,88.9 L 478.4,85.5 L 482.0,90.7" fill="none" stroke="#c8102e" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
-            <path d="M 58.0,192.2 L 68.9,187.0 L 79.7,180.1 L 90.6,174.9 L 101.5,169.7 L 112.4,174.9 L 123.2,180.1 L 134.1,187.0 L 145.0,192.2 L 155.8,197.4 L 166.7,200.9 L 177.6,204.3 L 188.5,209.5 L 199.3,214.7 L 210.2,218.2 L 221.1,221.7 L 231.9,214.7 L 242.8,192.2 L 253.7,140.2 L 264.6,88.2 L 275.4,60.4 L 286.3,76.0 L 297.2,105.5 L 308.1,135.0 L 318.9,162.7 L 329.8,180.1 L 340.7,192.2 L 351.5,200.9 L 362.4,204.3 L 373.3,209.5 L 384.2,214.7 L 395.0,209.5 L 405.9,200.9 L 416.8,192.2 L 427.6,187.0 L 438.5,183.5 L 449.4,180.1 L 460.3,174.9 L 471.1,178.3 L 482.0,180.1" fill="none" stroke="#5a6478" stroke-width="1.3" stroke-dasharray="4,2.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
-            <circle cx="482.0" cy="90.7" r="3.8" fill="#c8102e" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="476.0" y="82.7" text-anchor="end" fill="#c8102e" font-size="11" font-family="IBM Plex Mono, monospace" font-weight="700">€50.14</text>
+            <path d="M 58.0,208.6 L 61.5,205.2 L 65.0,201.8 L 68.5,198.9 L 72.0,196.5 L 75.5,194.0 L 79.0,192.1 L 82.5,189.2 L 86.0,185.8 L 89.5,182.4 L 93.0,179.5 L 96.5,176.1 L 100.0,172.7 L 103.6,169.8 L 107.1,166.4 L 110.6,163.0 L 114.1,160.1 L 117.6,156.7 L 121.1,153.3 L 124.6,150.4 L 128.1,151.9 L 131.6,155.3 L 135.1,161.6 L 138.6,167.9 L 142.1,171.3 L 145.6,174.7 L 149.1,177.6 L 152.6,181.0 L 156.1,184.3 L 159.6,187.3 L 163.1,190.6 L 166.6,193.1 L 170.1,195.5 L 173.6,197.9 L 177.1,200.3 L 180.6,196.9 L 184.1,193.1 L 187.7,185.8 L 191.2,178.5 L 194.7,171.3 L 198.2,174.7 L 201.7,181.0 L 205.2,184.3 L 208.7,187.3 L 212.2,185.8 L 215.7,183.4 L 219.2,181.0 L 222.7,178.5 L 226.2,174.7 L 229.7,171.3 L 233.2,195.5 L 236.7,224.6 L 240.2,208.6 L 243.7,190.6 L 247.2,172.7 L 250.7,155.3 L 254.2,138.8 L 257.7,122.8 L 261.2,111.7 L 264.7,98.6 L 268.2,85.5 L 271.8,69.5 L 275.3,53.6 L 278.8,50.2 L 282.3,51.6 L 285.8,58.4 L 289.3,66.2 L 292.8,74.4 L 296.3,82.6 L 299.8,90.4 L 303.3,98.6 L 306.8,106.8 L 310.3,114.6 L 313.8,121.4 L 317.3,127.7 L 320.8,132.5 L 324.3,135.9 L 327.8,138.8 L 331.3,142.2 L 334.8,145.6 L 338.3,148.5 L 341.8,151.9 L 345.3,155.3 L 348.8,151.9 L 352.3,148.5 L 355.9,144.6 L 359.4,140.8 L 362.9,137.4 L 366.4,134.0 L 369.9,130.1 L 373.4,126.2 L 376.9,132.5 L 380.4,138.8 L 383.9,142.2 L 387.4,145.6 L 390.9,151.9 L 394.4,156.7 L 397.9,160.1 L 401.4,156.7 L 404.9,150.4 L 408.4,143.7 L 411.9,137.4 L 415.4,131.1 L 418.9,124.3 L 422.4,118.0 L 425.9,111.7 L 429.4,104.9 L 432.9,98.6 L 436.4,95.2 L 440.0,102.0 L 443.5,113.1 L 447.0,124.3 L 450.5,127.7 L 454.0,119.4 L 457.5,111.7 L 461.0,103.5 L 464.5,97.2 L 468.0,88.9 L 471.5,85.5 L 475.0,90.7 L 478.5,89.1 L 482.0,78.9 L 482.0,230.0 L 58.0,230.0 Z" fill="#c8102e" opacity="0.08"/>
+            <path d="M 58.0,208.6 L 61.5,205.2 L 65.0,201.8 L 68.5,198.9 L 72.0,196.5 L 75.5,194.0 L 79.0,192.1 L 82.5,189.2 L 86.0,185.8 L 89.5,182.4 L 93.0,179.5 L 96.5,176.1 L 100.0,172.7 L 103.6,169.8 L 107.1,166.4 L 110.6,163.0 L 114.1,160.1 L 117.6,156.7 L 121.1,153.3 L 124.6,150.4 L 128.1,151.9 L 131.6,155.3 L 135.1,161.6 L 138.6,167.9 L 142.1,171.3 L 145.6,174.7 L 149.1,177.6 L 152.6,181.0 L 156.1,184.3 L 159.6,187.3 L 163.1,190.6 L 166.6,193.1 L 170.1,195.5 L 173.6,197.9 L 177.1,200.3 L 180.6,196.9 L 184.1,193.1 L 187.7,185.8 L 191.2,178.5 L 194.7,171.3 L 198.2,174.7 L 201.7,181.0 L 205.2,184.3 L 208.7,187.3 L 212.2,185.8 L 215.7,183.4 L 219.2,181.0 L 222.7,178.5 L 226.2,174.7 L 229.7,171.3 L 233.2,195.5 L 236.7,224.6 L 240.2,208.6 L 243.7,190.6 L 247.2,172.7 L 250.7,155.3 L 254.2,138.8 L 257.7,122.8 L 261.2,111.7 L 264.7,98.6 L 268.2,85.5 L 271.8,69.5 L 275.3,53.6 L 278.8,50.2 L 282.3,51.6 L 285.8,58.4 L 289.3,66.2 L 292.8,74.4 L 296.3,82.6 L 299.8,90.4 L 303.3,98.6 L 306.8,106.8 L 310.3,114.6 L 313.8,121.4 L 317.3,127.7 L 320.8,132.5 L 324.3,135.9 L 327.8,138.8 L 331.3,142.2 L 334.8,145.6 L 338.3,148.5 L 341.8,151.9 L 345.3,155.3 L 348.8,151.9 L 352.3,148.5 L 355.9,144.6 L 359.4,140.8 L 362.9,137.4 L 366.4,134.0 L 369.9,130.1 L 373.4,126.2 L 376.9,132.5 L 380.4,138.8 L 383.9,142.2 L 387.4,145.6 L 390.9,151.9 L 394.4,156.7 L 397.9,160.1 L 401.4,156.7 L 404.9,150.4 L 408.4,143.7 L 411.9,137.4 L 415.4,131.1 L 418.9,124.3 L 422.4,118.0 L 425.9,111.7 L 429.4,104.9 L 432.9,98.6 L 436.4,95.2 L 440.0,102.0 L 443.5,113.1 L 447.0,124.3 L 450.5,127.7 L 454.0,119.4 L 457.5,111.7 L 461.0,103.5 L 464.5,97.2 L 468.0,88.9 L 471.5,85.5 L 475.0,90.7 L 478.5,89.1 L 482.0,78.9" fill="none" stroke="#c8102e" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M 58.0,192.2 L 68.7,187.0 L 79.3,180.1 L 90.1,174.9 L 100.8,169.7 L 111.5,174.9 L 122.1,180.1 L 132.8,187.0 L 143.6,192.2 L 154.2,197.4 L 164.9,200.9 L 175.6,204.3 L 186.3,209.5 L 197.0,214.7 L 207.7,218.2 L 218.4,221.7 L 229.0,214.7 L 239.7,192.2 L 250.5,140.2 L 261.2,88.2 L 271.8,60.4 L 282.5,76.0 L 293.2,105.5 L 304.0,135.0 L 314.6,162.7 L 325.3,180.1 L 336.0,192.2 L 346.6,200.9 L 357.4,204.3 L 368.1,209.5 L 378.8,214.7 L 389.4,209.5 L 400.1,200.9 L 410.9,192.2 L 421.5,187.0 L 432.2,183.5 L 442.9,180.1 L 453.7,174.9 L 464.3,178.3 L 475.0,180.1 L 482.0,180.1" fill="none" stroke="#5a6478" stroke-width="1.3" stroke-dasharray="4,2.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+            <circle cx="482.0" cy="78.9" r="3.8" fill="#c8102e" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="476.0" y="70.9" text-anchor="end" fill="#c8102e" font-size="11" font-family="IBM Plex Mono, monospace" font-weight="700">€52.16</text>
             <circle cx="482.0" cy="180.1" r="3.2" fill="#1a2436" stroke="#ffffff" stroke-width="1.5"/>
             <text x="476.0" y="194.1" text-anchor="end" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" font-weight="600">7.2×</text>
             <text x="58.0" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 16</text>
@@ -2181,13 +2508,13 @@
             <text x="227.6" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 20</text>
             <text x="312.4" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 22</text>
             <text x="397.2" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 24</text>
-            <text x="482.0" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 26</text>
+            <text x="482.0" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Jun 26</text>
             </svg>
-            <div class="chart-caption">Price range on chart: €22 to €58. Multiple: 10y MIN 4.7× · AVG 6.9× · MAX 14.1× · NOW 7.2×.</div>
+            <div class="chart-caption"><strong style="color: var(--dhl-deep);">Takeaway.</strong> Current 7.2&times; sits roughly at the 10-year average (6.9&times;); the multiple is not depressed. The thesis is therefore <em>not</em> "buy the cyclical low" but "underwrite the conglomerate-discount unlock if the board engages." Without a process catalyst, mean-reversion alone is not the trade. Price range on chart: &euro;22 to &euro;58. Multiple: 10y MIN 4.7&times; &middot; AVG 6.9&times; &middot; MAX 14.1&times; &middot; NOW 7.2&times;.</div>
             </div>
                         <div class="chart-box" style="margin-top:16px;">
-            <div class="chart-title" style="color:#c8102e;">② ROIC &amp; ROCE: Ten-Year Trend vs Cost of Capital</div>
-            <div class="chart-sub">Annual % returns on invested capital and capital employed. Shading shows value creation (green) where ROIC &gt; WACC and value destruction (red) where ROIC &lt; WACC.</div>
+            <div class="chart-title" style="color:#c8102e;">② ROIC &amp; ROCE: Ten-Year Trajectory</div>
+            <div class="chart-sub">Annual % returns on invested capital and capital employed, ten-year trajectory.</div>
             <svg class="chart-svg" viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(52, 10)">
               <line x1="0" y1="7" x2="18" y2="7" stroke="#c8102e" stroke-width="2.2" stroke-linecap="round"/>
@@ -2195,12 +2522,6 @@
               <text x="22" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">ROIC</text>
               <line x1="80" y1="7" x2="98" y2="7" stroke="#c8102e" stroke-width="1.4" stroke-dasharray="5,2.5" stroke-linecap="round" opacity="0.7"/>
               <text x="102" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">ROCE</text>
-              <line x1="160" y1="7" x2="178" y2="7" stroke="#8aa8c8" stroke-width="1.2" stroke-dasharray="4,2.5" stroke-linecap="round"/>
-              <text x="182" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">WACC 7.0%</text>
-              <rect x="260" y="2" width="10" height="10" fill="#4ade80" opacity="0.22" rx="1"/>
-              <text x="274" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Value creation</text>
-              <rect x="370" y="2" width="10" height="10" fill="#d45b5b" opacity="0.22" rx="1"/>
-              <text x="384" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Value destruction</text>
             </g>
             <line x1="52" y1="143.7" x2="520" y2="143.7" stroke="#d8dde7" stroke-width="0.5" opacity="0.25"/>
             <text x="46.0" y="146.7" text-anchor="end" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace">5%</text>
@@ -2211,18 +2532,7 @@
             <line x1="52" y1="38.0" x2="520" y2="38.0" stroke="#d8dde7" stroke-width="0.5" opacity="0.25"/>
             <text x="46.0" y="41.0" text-anchor="end" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace">20%</text>
             <line x1="52" y1="178.9" x2="520" y2="178.9" stroke="#9aa3b2" stroke-width="0.8" opacity="0.5"/>
-            <path d="M 52.0,133.1 L 89.1,129.6 L 52.0,129.6 Z" fill="#d45b5b" opacity="0.20"/>
-            <path d="M 89.1,129.6 L 104.0,128.2 L 104.0,129.6 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 104.0,128.2 L 156.0,122.5 L 156.0,129.6 L 104.0,129.6 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 156.0,122.5 L 208.0,123.9 L 208.0,129.6 L 156.0,129.6 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 208.0,123.9 L 260.0,120.4 L 260.0,129.6 L 208.0,129.6 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 260.0,120.4 L 312.0,71.8 L 312.0,129.6 L 260.0,129.6 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 312.0,71.8 L 364.0,79.6 L 364.0,129.6 L 312.0,129.6 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 364.0,79.6 L 416.0,116.2 L 416.0,129.6 L 364.0,129.6 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 416.0,116.2 L 468.0,121.1 L 468.0,129.6 L 416.0,129.6 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 468.0,121.1 L 520.0,118.3 L 520.0,129.6 L 468.0,129.6 Z" fill="#4ade80" opacity="0.18"/>
             <path d="M 52.0,126.0 L 104.0,121.1 L 156.0,112.0 L 208.0,114.1 L 260.0,112.0 L 312.0,53.5 L 364.0,62.7 L 416.0,102.8 L 468.0,109.8 L 520.0,107.0" fill="none" stroke="#c8102e" stroke-width="1.5" stroke-dasharray="5,2.5" opacity="0.65" stroke-linejoin="round" stroke-linecap="round"/>
-            <line x1="52" y1="129.6" x2="520" y2="129.6" stroke="#8aa8c8" stroke-width="1.3" stroke-dasharray="5,3" opacity="0.9"/>
             <path d="M 52.0,133.1 L 104.0,128.2 L 156.0,122.5 L 208.0,123.9 L 260.0,120.4 L 312.0,71.8 L 364.0,79.6 L 416.0,116.2 L 468.0,121.1 L 520.0,118.3" fill="none" stroke="#c8102e" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
             <circle cx="52.0" cy="133.1" r="3.2" fill="#c8102e" stroke="#ffffff" stroke-width="1.5"/>
             <text x="52.0" y="147.1" text-anchor="middle" fill="#c8102e" font-size="9.5" font-family="IBM Plex Mono, monospace" font-weight="700">6.5</text>
@@ -2256,11 +2566,11 @@
             <text x="520.0" y="220" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">2025</text>
             </svg>
             <div class="chart-caption" style="margin-top:6px;">
-              <span style="color:#5a6478; font-size:10px; letter-spacing:0.08em;">WACC DERIVATION:</span>
-              <span style="font-size:11.5px;">β ~0.9 (logistics, diversified end-markets) × 5.5% ERP + 3.0% Rf + 3.5% after-tax cost of debt (30% weight). Risk-free rate is 10-year sovereign average (DE/UK/NL).</span>
+              <p style="margin: 0 0 var(--s-2) 0;"><strong style="color: var(--dhl-deep);">Takeaway.</strong> Group ROIC peaked through the FY21 to 22 freight cycle and has since compressed as eCommerce and Forwarding margins normalised. <strong>The operating evidence that supports a portfolio review:</strong> the group ROIC line is a mix of Express (~20%+) and PPG (~5%) returns. Separation lets each business be valued for what it earns, not for the average.</p>
             </div>
             </div>
           </div>
+
         </section>
 
         <section class="section" aria-labelledby="dhl-commit">
@@ -2340,16 +2650,18 @@
             <p class="mech-eyebrow">The instrument &middot; conditional on board appetite</p>
             <div class="mech-content">
               <p><strong>The ask:</strong> Express separation, with Post &amp; Parcel Germany retained as union-protected German entity. <strong>Aufsichtsrat target:</strong> the Strategy, Technology &amp; Sustainability Committee, whose current chair held a CEO role at one of Cevian's prior German engagements; that prior relationship, not naming individuals, is the credible peer-to-peer entry point. <strong>Secondary route:</strong> the Finance &amp; Audit Committee, where the chair has the relevant European industrial CFO background to evaluate a structural review.</p>
-              <p><strong>State-shareholder alignment:</strong> KfW representation on the Strategy Committee means the 16% holder is embedded in the instrument. The 2024 sell-down (see the state-overhang box below) provides supporting context: the state stake is reducible, not sacred, even if KfW alignment remains the gating issue. <strong>Precedent:</strong> ABB Power Grids, Cevian arrived 2015, sale 2018 (3 years). DHL is structurally slower (state shareholder plus Mitbestimmung), expect 5 to 7 year hold.</p>
+              <p><strong>State-shareholder alignment:</strong> KfW now holds <strong>17.73%</strong>, passive financial holder, no special voting rights. The state-overhang box below sets out why the percentage drifted <em>up</em> from the 2024 sell-down level (mechanical buyback accretion, not a reload) and where it actually bites in governance terms (a demerger, not a sale). <strong>Precedent:</strong> ABB Power Grids, Cevian arrived 2015, sale 2018 (3 years). DHL is structurally slower (state shareholder plus Mitbestimmung), expect 5 to 7 year hold.</p>
             </div>
           </div>
 
           <div class="mech-box is-dhl" style="margin-top: 16px;">
-            <p class="mech-eyebrow">State overhang &middot; reduced but not removed</p>
+            <p class="mech-eyebrow">State overhang &middot; what KfW actually is, and where it bites</p>
             <div class="mech-content">
-              <p>In February 2024, KfW placed approximately 50m DHL shares for &euro;2.17bn, cutting its stake from ~20.5% to ~16.5% as part of the broader German privatisation programme funding Deutsche Bahn rail investment. KfW remained the largest shareholder, and as of the most recent disclosures still holds roughly 17% (small accretion-related drift). <strong>Read it as governance context, not a fresh catalyst.</strong></p>
-              <p><strong>What it tells us:</strong> the state stake is financial and reducible, not sacred. Free float improved, making position-building marginally easier. KfW behaves at least partly as a financial holder, motivated by fiscal policy rather than DHL-specific strategic conviction. <strong>What it does not tell us:</strong> the willingness to monetise a passive stake is not the same as support for a structural separation of Express. Selling 4 percentage points to fund rail does not signal alignment on a complex break-up.</p>
-              <p><strong>Engagement implication:</strong> KfW alignment remains a gating issue for any Express separation, but the prior is "reducible-with-the-right-fiscal-trigger" rather than "permanent strategic anchor." The first-100-days test is therefore whether KfW currently sees itself as a financial seller over time or as a strategic guardian of the integrated group. Either answer is informative; only the former clears the path to engagement.</p>
+              <p><strong>The 17.73% is mechanical, not a reload.</strong> In February 2024 KfW placed ~50m DHL shares for &euro;2.17bn, taking its stake from ~20.5% to ~16.5% to fund Deutsche Bahn. Since then, DHL retired ~50m treasury shares under the standing buyback programme. KfW's <em>absolute</em> shareholding has been broadly flat; the <em>denominator</em> shrank, so the percentage drifted up to <strong>17.73%</strong>. It is buyback-mechanics accretion, not a strategic re-up.</p>
+              <p><strong>What KfW is, and is not.</strong> A passive financial holder, no special voting rights, no golden share, no statutory veto. Strategy Committee representation is observer-grade, not a control lever. The seller behaviour is price-insensitive on a federal-budget timeline, the 2024 placement was driven by Bahn capex, not by a view on DHL. Read KfW as a residual privatisation overhang on a fiscal clock, not as a strategic guardian of the integrated group.</p>
+              <p><strong>Where 17.73% does and does not bite.</strong> An Express <em>sale</em> (trade or financial) does not require an AGM vote, the Vorstand and Aufsichtsrat can transact, and KfW has no procedural block. An Express <em>demerger</em> (spin under the UmwG) needs a 75% supermajority of <em>voted</em> shares at the AGM. At typical DAX free-float turnout (~60 to 65%), 17.73% of issued capital ≈ ~25 to 27% of voted shares, a practical blocking minority <em>only on that path</em>. This is the precise governance asymmetry that shapes the ask: a sale-led structure is the path of least resistance; a demerger requires KfW to either vote for it or abstain in sufficient numbers, which in turn requires Berlin to be at minimum neutral.</p>
+              <p><strong>The flow opportunity.</strong> The next KfW disposal is more likely than not, and most plausibly an ABB-style accelerated bookbuild rather than a marketed offering. That placement is the natural anchor moment for Cevian to step from a 1 to 2% probe to a 5 to 7% engagement stake, deep liquidity in a single window, no market-impact tax, and a clean entry price. Position-build optionality is therefore <em>event-driven</em>, not screen-driven.</p>
+              <p><strong>Engagement implication.</strong> The first-100-days test is no longer "does KfW see itself as financial or strategic", that question is largely answered by the 2024 placement and the absence of any reload. The live questions are (i) does Berlin sit out a demerger vote if the Aufsichtsrat sponsors it, and (ii) when is the next placement window. Only the first opens the demerger path; the sale path stays open regardless.</p>
             </div>
           </div>
         </section>
@@ -2357,40 +2669,29 @@
         <section class="section" aria-labelledby="dhl-100">
           <p class="section-label is-dhl">&sect; 3.6, First 100 days</p>
           <h2 id="dhl-100">The appetite-test sleeve</h2>
-          <p class="lede">The Aufsichtsrat board-appetite test is the binary signal. Without active board interest, DHL exits the book.</p>
+          <p class="lede">An influence-based probe, not a campaign. At DHL's scale and ownership structure, Cevian's role is to seed the Express-review idea inside the Aufsichtsrat, not to drive it from a 5%-plus block as in a conventional engagement. The board-appetite test is the binary signal. Same Scale / Test / Monitor framework, but here <strong>Test</strong> is the load-bearing leg, the entire thesis turns on whether the board picks the idea up.</p>
 
-          <div class="grid-2">
+          <div class="grid-3">
             <article class="card is-dhl">
-              <p class="card-label">Days 1 to 30 &middot; Probe position &amp; SOTP build</p>
+              <p class="card-label" style="color: var(--dhl-deep);">SCALE &middot; Days 1 to 30</p>
               <div class="card-body">
-                <p><strong>(1) Probe position.</strong> 1 to 2% via algo-VWAP. &euro;600m to 1.2bn at &euro;57.7bn cap. Stay below 3% German notification threshold, campaign needs to remain optional through Day 100.</p>
-                <p><strong>(2) Express segment standalone model.</strong> Pull 5-year segment EBIT history; rebuild EBITDA bridge using division-level D&amp;A intensity. Confirm &euro;4.5bn standalone EBITDA basis vs FedEx/UPS comparable basis.</p>
-                <p><strong>(3) ABB Power Grids precedent reconstruction.</strong> Pull Cevian's 2015 to 2018 engagement timeline: position-build, Aufsichtsrat contact, strategic-review, buyer process, sale.</p>
+                <p><strong>(1) Probe to 1 to 2%</strong> via algo-VWAP. Stay below 3% German notification threshold, the campaign must remain optional through Day 100.</p>
+                <p><strong>(2) Refresh the SOTP</strong> with current consensus (&sect; 3.1 table) and reconstruct ABB Power Grids precedent timeline (Cevian 2015-2018: position-build &rarr; Aufsichtsrat &rarr; review &rarr; sale).</p>
+                <p><strong>(3) Pre-position for the next KfW placement.</strong> Build the bookrunner relationships now. The next disposal, most plausibly an ABB-style accelerated bookbuild, is the natural anchor moment to move from probe to a 5 to 7% engagement stake in a single window, deep liquidity, no market-impact tax.</p>
               </div>
             </article>
             <article class="card is-dhl">
-              <p class="card-label">Days 31 to 60 &middot; Aufsichtsrat &amp; state coordination</p>
+              <p class="card-label" style="color: var(--dhl-deep);">TEST &middot; Days 31 to 70</p>
               <div class="card-body">
-                <p><strong>(4) Aufsichtsrat mapping.</strong> All 20 SB members under Mitbestimmung (10 shareholder, 10 employee). Identify Strategy Committee composition, chair history, and committee receptivity to portfolio review. Held internally.</p>
-                <p><strong>(5) State-shareholder coordination.</strong> KfW (16% holder) plus BMF Federal Ministry of Finance need political alignment. Express separation can retain PPG as German entity, politically sensitive piece preserved. The 2024 sell-down precedent is governance context, not a forward catalyst.</p>
-                <p><strong>(6) Strategy 2030 read-through.</strong> Strategy Committee met 8&times; in 2025 on Strategy 2030. Pull every public utterance for evidence of "structural review optionality" framing.</p>
+                <p><strong>(4) Aufsichtsrat mapping.</strong> All 20 SB members (10 shareholder, 10 employee under Mitbestimmung). Identify Strategy Committee composition and a credible first contact.</p>
+                <p><strong>(5) The single test meeting.</strong> Private. Frame as continuation of prior Cevian German-industrial work, present the SOTP and the FedEx-multiple gap. <em>This meeting is the entire thesis.</em></p>
               </div>
             </article>
             <article class="card is-dhl">
-              <p class="card-label">Days 61 to 100 &middot; Test meeting &amp; decision</p>
+              <p class="card-label" style="color: var(--dhl-deep);">MONITOR &middot; Days 71 to 100</p>
               <div class="card-body">
-                <p><strong>(7) Test meeting.</strong> Private. Frame as a peer-to-peer continuation of prior Cevian work in German industrials: "We have engaged constructively before; here is the SOTP analysis we believe deserves Strategy Committee airtime." Bring the FedEx-multiple gap and the ABB Power Grids precedent.</p>
-                <p><strong>(8) Read the room.</strong> Three outcomes: (a) actively interested, expand to 3 to 4%, formal engagement begins; (b) constructively curious, maintain probe, plan a second-route contact via the Audit Committee; (c) closed, exit, write up the campaign as defeated and move on.</p>
-                <p><strong>(9) Day-100 decision: stay or exit.</strong> Cevian is not in the business of multi-year campaigns where board appetite is missing. The discipline is to move on.</p>
-              </div>
-            </article>
-            <article class="card is-dhl">
-              <p class="card-label">Decisions to be made by Day 100</p>
-              <div class="card-body">
-                <p><strong>(A) Board appetite for Express review.</strong> The Aufsichtsrat outcome is the binary signal. <strong>Without active interest, DHL exits the book.</strong></p>
-                <p><strong>(B) State-shareholder posture.</strong> Whether KfW signals openness to a structural review or treats the holding as a strategic anchor. If it opposes outright, the campaign reverts to watching-brief.</p>
-                <p><strong>(C) Position scale-up.</strong> Conditional on (A) and (B). Probe (1 to 2%) to engagement (3 to 4%) to concentrated (5 to 7%). Default if both signals positive: scale to 3 to 4% in months 4 to 6.</p>
-                <p><strong>Time-to-crystallisation:</strong> 5 to 7 years (vs ABB Power Grids 3 years) due to state-shareholder plus Mitbestimmung overhead.</p>
+                <p><strong>(6) Read the room.</strong> Three outcomes: (a) <em>actively interested</em> &rarr; scale to 3-4%, engagement begins; (b) <em>constructively curious</em> &rarr; maintain probe, second-route contact via Audit Committee; (c) <em>closed</em> &rarr; exit, write up as defeated.</p>
+                <p><strong>(7) Day 100: stay or exit.</strong> Cevian is not in the business of multi-year campaigns where board appetite is missing. Time-to-crystallisation if positive: 5-7 years (vs ABB 3) given state shareholder and co-determination.</p>
               </div>
             </article>
           </div>
@@ -2420,7 +2721,7 @@
           <div class="ch-text">
             <p class="ch-status">&#9314; Watchlist &middot; not a live position</p>
             <h1>The Strongest Math, the Worst Timing</h1>
-            <p class="ch-tagline">&euro;62 break-up versus &euro;41 today, but the CEO has said "not now," litigation is at its decision point this week, and the stock has rallied 94% off its lows. Position only when two of three triggers fire.</p>
+            <p class="ch-tagline">&euro;62 break-up versus &euro;41 today, but the CEO has said "not now," litigation is at its decision point this week, and the stock has rallied 94% off its lows. Position only when two of three conditions are met.</p>
           </div>
         </header>
 
@@ -2449,26 +2750,260 @@
 
         <section class="section" aria-labelledby="bayer-setup">
           <p class="section-label is-bayer">&sect; 4.1, The setup</p>
-          <h2 id="bayer-setup">Three businesses, three different cycles</h2>
-          <p class="lede">Three-overhang break-up case: Roundup litigation, Xarelto patent cliff, leverage. The SOTP unlock is largely the Consumer Health separation: &euro;1.3bn EBITDA &times; Haleon 14.9&times; = &euro;19bn standalone vs ~&euro;9bn implied inside the group. Crop Science alone (corn-seed leadership, Sanofi-comparable Pharma segment) supports &euro;40bn EV at peer multiples. Net debt at &euro;29.7bn FY25 is the lowest in 5 years (down &euro;4.7bn from the FY23 peak), removing one of the three overhangs even before any portfolio action.</p>
+          <h2 id="bayer-setup">The strongest math, the worst entry, the conditional thesis</h2>
+          <p class="lede"><strong>What Bayer is.</strong> A German life-sciences group with three businesses, each globally relevant in its own right. <strong>Pharma</strong> (~&euro;5.6bn EBITDA) is a European mid-tier with cardiovascular and oncology franchises (Eylea, Xarelto, Nubeqa, Kerendia), facing the Xarelto cliff but with Nubeqa and Kerendia ramping behind it; the standalone re-rates into the GSK-Sanofi 8.5 to 9.0&times; range once the litigation-conglomerate discount unwinds. <strong>Crop Science</strong> (~&euro;3.0bn EBITDA) is the world's largest seeds-and-traits business (corn-seed leadership, Roundup) plus crop-protection chemicals, comparable to Corteva. <strong>Consumer Health</strong> (~&euro;1.3bn EBITDA) is the OTC business (Aspirin, Bepanthen, Aleve) directly comparable to Haleon and Kenvue. Each business has at least one cleanly-listed peer set, the SOTP is well-defined.</p>
+
+          <p class="lede" style="font-weight: 500; color: var(--ink);">The narrative is a four-step arc: overhangs &rarr; what resolves &rarr; what that unlocks &rarr; how the rerating happens.</p>
 
           <div class="story-grid">
             <article class="story-block is-bayer">
-              <h3>The watchlist triggers (two to go live)</h3>
+              <h3>(1) What the market is worried about</h3>
               <ul>
-                <li><strong>(1) SCOTUS Durnell.</strong> Oral arguments <strong>27 April 2026</strong> (today); decision by end-June 2026. FIFRA preemption ruling closes most state-court tail.</li>
-                <li><strong>(2) CEO stance.</strong> Currently "not now... not never" (March 2024, reaffirmed 2025 to 26). Watch for portfolio-action openness signal or contract-renewal pivot (CEO term ends June 2027).</li>
-                <li><strong>(3) Entry price.</strong> Stock +94% off &euro;21.17 low; &euro;30 = ~50% retracement, the asymmetry-reset level.</li>
+                <li><strong>Roundup litigation.</strong> ~67,000 active cases; &euro;11.8bn cumulative provisions. Plaintiff bar settlements paused pending FIFRA-preemption resolution.</li>
+                <li><strong>Xarelto patent cliff.</strong> Genericization began 2024 to 26; ~&euro;2bn revenue at risk. Pipeline replacement (Kerendia, finerenone, asundexian) credible but timing-dependent.</li>
+                <li><strong>Leverage.</strong> Net debt &euro;29.7bn FY25; pension &euro;2.1bn; provisions &euro;11.8bn. Total adjusted ~&euro;43bn against &euro;9.9bn group EBITDA.</li>
+                <li><strong>Conglomerate complexity.</strong> Three different cycles, three different peer sets, no clean read-across.</li>
               </ul>
             </article>
             <article class="story-block is-bayer">
-              <h3>SOTP at peer multiples (conditional)</h3>
+              <h3>(2) Why those overhangs may resolve</h3>
               <ul>
-                <li><strong>Pharma</strong> &middot; &euro;5.6bn EBITDA &times; Sanofi 9&times; = &euro;50bn EV</li>
-                <li><strong>Crop Science</strong> &middot; &euro;3.0bn &times; Corteva 11&times; = &euro;33bn</li>
-                <li><strong>Consumer Health</strong> &middot; &euro;1.3bn &times; Haleon 14.9&times; = &euro;19bn</li>
-                <li>Group EV ~&euro;102bn &minus; &euro;29.7bn debt &minus; &euro;11.8bn provisions &minus; &euro;2.1bn pension = ~&euro;58bn equity ~ &euro;59/sh</li>
-                <li>Conservative SOTP &euro;62/sh (with provision haircut)</li>
+                <li><strong>SCOTUS Durnell.</strong> Oral arguments heard 27 April 2026; ruling pending, expected by end-June 2026. FIFRA preemption ruling closes the bulk of the state-court tail. Even partial preemption removes the open-ended-liability character.</li>
+                <li><strong>Patent cliff is dating, not deepening.</strong> The cliff is largely priced from FY24 to 26; pipeline replacements are tracking and consensus is rebuilding.</li>
+                <li><strong>Leverage is improving.</strong> Net debt down &euro;4.7bn from the FY23 peak (&euro;34.4bn to &euro;29.7bn FY25), the lowest in five years. The leverage overhang is mechanically reducing.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="story-grid" style="margin-top: var(--s-4);">
+            <article class="story-block is-bayer">
+              <h3>(3) What changes if the overhangs resolve</h3>
+              <ul>
+                <li><strong>Consumer Health becomes separable.</strong> The standalone OTC business (~&euro;1.3bn EBITDA at Haleon 14.9&times; = &euro;19bn) is currently implied at ~&euro;9bn inside the group. The separation alone closes a ~&euro;10bn gap.</li>
+                <li><strong>Pharma re-enters peer comp set.</strong> Currently trapped inside a litigation conglomerate at an implicit single-digit multiple. Once Crop Science liability is contained, the standalone re-rates into the European mid-tier range (GSK 8.5&times;, Sanofi 9.0&times;). The 9&times; we apply is a post-overhang outcome, not a quality-parity claim against Sanofi's Dupixent franchise &mdash; and the re-rate is gated as much on pipeline phasing (Xarelto LOE absorbed, Nubeqa and Kerendia carrying the book) as on litigation closing.</li>
+                <li><strong>Crop Science becomes ownable.</strong> Most institutions cannot hold a Roundup-litigation tail. FIFRA preemption resolution makes the segment institutionally investable.</li>
+                <li><strong>CEO appetite.</strong> The current "not now... not never" stance was defensible while litigation was open-ended. Resolution forces the question back open. CEO term ends June 2027.</li>
+              </ul>
+            </article>
+            <article class="story-block is-bayer">
+              <h3>(4) Why this unlocks rerating</h3>
+              <ul>
+                <li><strong>SOTP at peer multiples</strong> (see &sect; 4.2 chart and below): Pharma &euro;50bn + Crop &euro;33bn + CH &euro;19bn = ~&euro;102bn EV; net of debt, pension, provisions = ~&euro;58bn equity / ~&euro;59 per share.</li>
+                <li><strong>Conservative SOTP &euro;62/sh</strong> with provision haircut.</li>
+                <li>Today &euro;41.10. Conditional upside ~50% to base, gross of timing.</li>
+                <li><strong>Why we are not buying today.</strong> Stock +94% off the &euro;21 low. Litigation tail not yet resolved. CEO has said no. The thesis is right; the entry is wrong. Watchlist position, two of three conditions required to go live (see &sect; 4.3).</li>
+              </ul>
+            </article>
+          </div>
+
+          <h3 style="margin-top: var(--s-7); margin-bottom: var(--s-2); color: var(--navy-deep);">Segment SOTP, with the peer logic made explicit</h3>
+          <p class="lede" style="margin-bottom: var(--s-3);">Each of the three businesses has at least one cleanly-listed peer, the SOTP is unusually well-defined for a conglomerate of this size. Multiples are FY25 NTM EV/EBITDA on consensus. Pharma is the largest by absolute value but Consumer Health is the cleanest <em>incremental</em> unlock, the unit is currently impossible to read inside the group.</p>
+
+          <div class="table-wrap">
+            <table class="ct">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 140px;">Segment</th>
+                  <th scope="col" style="text-align: right; width: 80px;">EBITDA</th>
+                  <th scope="col" style="width: 220px;">Closest peer (and why)</th>
+                  <th scope="col" style="text-align: center; width: 110px;">Peer multiple</th>
+                  <th scope="col" style="text-align: center; width: 90px;">Applied</th>
+                  <th scope="col" style="text-align: right; width: 100px;">Implied EV</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color: var(--bayer);">Pharma</strong><br><span style="color: var(--ink-3); font-size: 11px;">Cardio, oncology, women's health</span></td>
+                  <td style="text-align: right;" class="cell-val">&euro;5.6bn</td>
+                  <td><strong>GSK</strong> (lead, overhang analog), <strong>Sanofi</strong> (range top), <strong>AZN</strong> excluded<br><span style="color: var(--ink-3); font-size: 11px;">GSK is the cleanest analog: similar mid-tier scale, comparable growth profile, and a Zantac litigation overhang structurally analogous to Roundup. Sanofi anchors the upper end of the European mid-tier range; we are not claiming Dupixent-level franchise quality. AZN's premium is oncology-pipeline-driven and not the right comp here. The deeper caveat is phasing: a single NTM multiple compares two pharma books at different points in their patent cycles &mdash; Bayer mid-Xarelto-cliff with Nubeqa and Kerendia ramping, Sanofi post-Dupixent-inflection &mdash; so the figure is a directional re-rating anchor, not a like-for-like read. 9&times; chosen as the post-overhang re-rating point; sensitivity below.</span></td>
+                  <td style="text-align: center;">GSK 8.5&times;<br>Sanofi 9.0&times;</td>
+                  <td style="text-align: center;" class="cell-val">9.0&times;</td>
+                  <td style="text-align: right;" class="cell-val">&euro;50bn</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--bayer);">Crop Science</strong><br><span style="color: var(--ink-3); font-size: 11px;">Seeds, traits, crop protection</span></td>
+                  <td style="text-align: right;" class="cell-val">&euro;3.0bn</td>
+                  <td><strong>Corteva</strong> (lead), <strong>FMC</strong> at floor<br><span style="color: var(--ink-3); font-size: 11px;">Corteva is the only listed pure-play seeds-and-CP business at scale, the direct read for Crop Science. FMC is crop-protection-only and weaker. Roundup tail discount embedded in the multiple choice.</span></td>
+                  <td style="text-align: center;">Corteva 11.0&times;<br>FMC 8.0&times;</td>
+                  <td style="text-align: center;" class="cell-val">11.0&times;</td>
+                  <td style="text-align: right;" class="cell-val">&euro;33bn</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--bayer);">Consumer Health</strong><br><span style="color: var(--ink-3); font-size: 11px;">OTC: Aspirin, Aleve, Bepanthen</span></td>
+                  <td style="text-align: right;" class="cell-val">&euro;1.3bn</td>
+                  <td><strong>Haleon</strong> (lead), <strong>Kenvue</strong> at floor<br><span style="color: var(--ink-3); font-size: 11px;">Haleon is GSK's spun-out consumer-health unit, structurally identical model to Bayer CH (OTC, vitamins, brand-led). Kenvue is the J&amp;J spin and trades cleaner because it is fully demerged. Both are direct precedents for the <em>type</em> of unlock available.</span></td>
+                  <td style="text-align: center;">Haleon 14.9&times;<br>Kenvue 12.5&times;</td>
+                  <td style="text-align: center;" class="cell-val">14.9&times;</td>
+                  <td style="text-align: right;" class="cell-val">&euro;19bn</td>
+                </tr>
+                <tr style="background: var(--paper-3); border-top: 2px solid var(--bayer);">
+                  <td colspan="2"><strong>Sum-of-parts EV</strong></td>
+                  <td colspan="3" style="color: var(--ink-3);"><em>Sum of segments at peer multiples (no corp overhead haircut, no rerating credit).</em></td>
+                  <td style="text-align: right; color: var(--bayer-deep);" class="cell-val">&euro;102bn</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><strong>Less: net debt</strong></td>
+                  <td colspan="3" style="color: var(--ink-3);"><em>CapIQ FY25; lowest in 5 years, down &euro;4.7bn from FY23 peak.</em></td>
+                  <td style="text-align: right;" class="cell-val">(&euro;29.7bn)</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><strong>Less: provisions</strong></td>
+                  <td colspan="3" style="color: var(--ink-3);"><em>Cumulative Roundup litigation provisions, FY25.</em></td>
+                  <td style="text-align: right;" class="cell-val">(&euro;11.8bn)</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><strong>Less: pension net</strong></td>
+                  <td colspan="3" style="color: var(--ink-3);"><em>Net pension obligation, FY25.</em></td>
+                  <td style="text-align: right;" class="cell-val">(&euro;2.1bn)</td>
+                </tr>
+                <tr style="background: var(--bayer-bg);">
+                  <td colspan="2"><strong style="color: var(--bayer-deep);">Implied equity value</strong></td>
+                  <td colspan="3"><strong style="color: var(--bayer-deep);">~&euro;58bn / ~&euro;59 per share at base SOTP.</strong> Conservative case at &euro;62/sh applies a haircut for residual provision uncertainty. Today &euro;41.10. Upside to base ~44%, to conservative ~51%, all conditional on the four-step arc resolving.</td>
+                  <td style="text-align: right; color: var(--bayer-deep);" class="cell-val">&euro;58bn</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+                    <h3 style="margin-top: var(--s-7); margin-bottom: var(--s-2); color: var(--navy-deep);">EBITDA margin &amp; scale, versus pure-play segment peers</h3>
+          <p class="lede" style="margin-bottom: var(--s-3);">The blended group margin is the wrong lens &mdash; it averages three businesses with very different economics and is further depressed by the litigation overhang. Benchmarked against the listed pure-play for each segment, the picture is clear: Crop Science is broadly in line with Corteva, while the group sits roughly ten points below pure-play pharma. The gap is the conglomerate-and-overhang discount, not asset quality.</p>
+          <div class="table-wrap">
+            <table class="ct">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 210px;">Company</th>
+                  <th scope="col" style="text-align: right; width: 105px;">Revenue (FY)</th>
+                  <th scope="col" style="text-align: center; width: 120px;">EBITDA margin</th>
+                  <th scope="col">Read</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background: var(--bayer-bg);">
+                  <td><strong style="color: var(--bayer-deep);">Bayer Group</strong><br><span style="color: var(--ink-3); font-size: 11px;">Pharma + Crop Science + Consumer Health</span></td>
+                  <td style="text-align: right;">&euro;45.2bn</td>
+                  <td style="text-align: center;" class="cell-val">~21%</td>
+                  <td><em>Subject; adjusted, before special items.</em> IFRS-reported EBITDA is depressed by Roundup and impairment charges. The blend masks three different-margin units.</td>
+                </tr>
+                <tr>
+                  <td><strong>GSK</strong><br><span style="color: var(--ink-3); font-size: 11px;">Pharma comp &middot; lead overhang analog</span></td>
+                  <td style="text-align: right;">&pound;31bn</td>
+                  <td style="text-align: center;" class="cell-val">~32%</td>
+                  <td>Pure-play pharma runs ~11pts above Bayer's blend &mdash; the cleanest read on the Pharma segment un-blended.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sanofi</strong><br><span style="color: var(--ink-3); font-size: 11px;">Pharma comp &middot; large-cap European</span></td>
+                  <td style="text-align: right;">&euro;44bn</td>
+                  <td style="text-align: center;" class="cell-val">~31%</td>
+                  <td>Anchors the pharma-margin ceiling; comparable scale, far higher margin.</td>
+                </tr>
+                <tr>
+                  <td><strong>Corteva</strong><br><span style="color: var(--ink-3); font-size: 11px;">Crop Science comp &middot; seeds + CP pure-play</span></td>
+                  <td style="text-align: right;">$17.4bn</td>
+                  <td style="text-align: center;" class="cell-val">~22%</td>
+                  <td>Bayer Crop Science is broadly in line &mdash; the segment is not low-quality, it is trapped inside the group.</td>
+                </tr>
+                <tr>
+                  <td><strong>Haleon</strong><br><span style="color: var(--ink-3); font-size: 11px;">Consumer Health comp &middot; GSK's CH spin</span></td>
+                  <td style="text-align: right;">&pound;11.2bn</td>
+                  <td style="text-align: center;" class="cell-val">~26%</td>
+                  <td>The direct precedent for a CH unlock; trades and earns cleanly because it is fully demerged.</td>
+                </tr>
+                <tr style="background: var(--paper-3); border-top: 2px solid var(--bayer);">
+                  <td colspan="4"><strong style="color: var(--bayer-deep);">The takeaway.</strong> Bayer's ~21% blended margin sits ~10 points below pure-play pharma (GSK ~32%, Sanofi ~31%) and below consumer health (Haleon ~26%), but broadly in line with crop science (Corteva ~22%). The depressed group margin is the arithmetic of the conglomerate mix plus the litigation overhang &mdash; not three weak businesses. That is precisely the SOTP-unlock case in &sect;&nbsp;4: the parts are worth more visible than blended.</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size: 10.5px; color: var(--ink-4); margin-top: var(--s-2); font-family: 'IBM Plex Mono', monospace; line-height: 1.5;">Source: Bloomberg (subject company); company filings and market data (peers). EBITDA margin = EBITDA &divide; revenue, latest reported fiscal year or LTM; adjusted / before-special-items where the company reports on that basis. Revenue shown in reporting currency; margins are currency-neutral. Figures rounded &mdash; for relative comparison, not valuation.</p>
+          </div>
+
+          <h3 style="margin-top: var(--s-6); margin-bottom: var(--s-2); color: var(--navy-deep);">Sensitivity: Pharma multiple is the swing variable, not the multiple choice</h3>
+          <p class="lede" style="margin-bottom: var(--s-3);">Pharma is the largest contributor to SOTP EV (~&euro;50bn at base, ~half the total). The defensible re-rating range is GSK 8.5&times; to Sanofi 9.0&times;. We size the SOTP at 9&times; on the post-overhang re-rating logic, but the table below makes the swing transparent: Crop@11&times; and CH@14.9&times; held constant, debt/provisions/pension fixed at &minus;&euro;43.6bn, 983m shares.</p>
+
+          <div class="table-wrap">
+            <table class="ct">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 200px;">Pharma multiple</th>
+                  <th scope="col" style="text-align: center;">8.0&times; <span style="color: var(--ink-4); font-weight: 400;">(GSK floor)</span></th>
+                  <th scope="col" style="text-align: center;">8.5&times; <span style="color: var(--ink-4); font-weight: 400;">(GSK)</span></th>
+                  <th scope="col" style="text-align: center; background: var(--bayer-bg);">9.0&times; <span style="color: var(--ink-4); font-weight: 400;">(base, Sanofi)</span></th>
+                  <th scope="col" style="text-align: center;">9.5&times;</th>
+                  <th scope="col" style="text-align: center;">10.0&times; <span style="color: var(--ink-4); font-weight: 400;">(stretch)</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pharma EV</td>
+                  <td style="text-align: center;" class="cell-val">&euro;44.8bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;47.6bn</td>
+                  <td style="text-align: center; background: var(--bayer-bg);" class="cell-val">&euro;50.0bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;53.2bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;56.0bn</td>
+                </tr>
+                <tr>
+                  <td>Total SOTP EV</td>
+                  <td style="text-align: center;" class="cell-val">&euro;96.8bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;99.6bn</td>
+                  <td style="text-align: center; background: var(--bayer-bg);" class="cell-val">&euro;102bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;105bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;108bn</td>
+                </tr>
+                <tr>
+                  <td>Implied equity</td>
+                  <td style="text-align: center;" class="cell-val">&euro;53.2bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;56.0bn</td>
+                  <td style="text-align: center; background: var(--bayer-bg);" class="cell-val">&euro;58.4bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;61.6bn</td>
+                  <td style="text-align: center;" class="cell-val">&euro;64.4bn</td>
+                </tr>
+                <tr style="border-top: 1px solid var(--bayer);">
+                  <td><strong>Per share</strong></td>
+                  <td style="text-align: center;" class="cell-val"><strong>&euro;54</strong></td>
+                  <td style="text-align: center;" class="cell-val"><strong>&euro;57</strong></td>
+                  <td style="text-align: center; background: var(--bayer-bg);" class="cell-val"><strong style="color: var(--bayer-deep);">&euro;59</strong></td>
+                  <td style="text-align: center;" class="cell-val"><strong>&euro;63</strong></td>
+                  <td style="text-align: center;" class="cell-val"><strong>&euro;66</strong></td>
+                </tr>
+                <tr>
+                  <td><span style="color: var(--ink-3);">Upside vs &euro;41.10</span></td>
+                  <td style="text-align: center; color: var(--ink-3);">+32%</td>
+                  <td style="text-align: center; color: var(--ink-3);">+39%</td>
+                  <td style="text-align: center; background: var(--bayer-bg); color: var(--bayer-deep);"><strong>+44%</strong></td>
+                  <td style="text-align: center; color: var(--ink-3);">+53%</td>
+                  <td style="text-align: center; color: var(--ink-3);">+60%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="lede" style="margin-top: var(--s-3); font-size: 13px; color: var(--ink-2);"><strong>Takeaway.</strong> Even at the GSK floor (8.0&times;), the conditional thesis still clears ~32% upside; the 8.5&times; case (Bayer Pharma valued like GSK on the nose) clears ~39%. The 9&times; base is not load-bearing. What is load-bearing is the litigation discount unwinding, not the GSK-vs-Sanofi multiple-choice question.</p>
+        </section>
+
+        <section class="section" aria-labelledby="bayer-timing">
+          <p class="section-label is-bayer">&sect; 4.1B, why now &amp; what would invalidate</p>
+          <h2 id="bayer-timing">The timing case, and the conditions that would invalidate the thesis</h2>
+          <p class="lede">Bayer is on the watchlist precisely because timing is the swing variable, not value. The "why now" answers the question of why we monitor this name actively rather than file it; the invalidators define the developments that would force us to drop it from the watchlist or accept that the entry-price condition will never be available.</p>
+
+          <div class="story-grid">
+            <article class="story-block is-bayer">
+              <h3>Why now</h3>
+              <ul>
+                <li><strong>SCOTUS Durnell oral arguments 27 April 2026</strong>; ruling pending, expected by end-June 2026. The single largest litigation overhang resolves by the end of the term, the most consequential rerating gate in the deck this quarter.</li>
+                <li><strong>$7.25bn Q1 2026 class settlement</strong> covers ~90% of known cases. For the first time since 2018, the litigation envelope is sufficiently bounded to support portfolio decisions.</li>
+                <li><strong>CEO contract expires June 2027.</strong> The engagement window opens 14 months out; "not now" naturally becomes "successor's choice" as the contract-end approaches. The inheritance frame is the live activist mechanism.</li>
+                <li><strong>FY25 EBITDA &euro;8.87bn missed &euro;9.7 to 10.2bn guide.</strong> Operating pressure on management; board attention naturally turns to portfolio structure when underlying performance disappoints.</li>
+                <li><strong>Net debt &euro;29.7bn, lowest in five years.</strong> The balance-sheet capacity for portfolio action exists for the first time since the Monsanto integration. Two years ago this was not actionable.</li>
+              </ul>
+            </article>
+            <article class="story-block is-bayer">
+              <h3>What would make us wrong</h3>
+              <ul>
+                <li><strong>Adverse SCOTUS ruling.</strong> No FIFRA preemption; provision range widens beyond &euro;15bn. The largest overhang is reaffirmed and the entry-price condition becomes academic.</li>
+                <li><strong>Class settlement opt-out rate exceeds 20%.</strong> A new state-court tail opens beyond the &euro;11.8bn provision. The bounded-litigation premise breaks.</li>
+                <li><strong>CEO contract renewed June 2027 with explicit anti-separation mandate.</strong> The inheritance frame closes; the watchlist case becomes structurally inactive for the contract's duration.</li>
+                <li><strong>Bluebell-style activist re-emerges</strong> and forecloses constructive engagement. SB returns to defensive posture; the private-letter channel closes.</li>
+                <li><strong>Pharma pipeline misses.</strong> Nubeqa or Kerendia revenue ramps fall materially short of consensus, undermining the SOTP Pharma multiple. The break-up math erodes.</li>
+                <li><strong>Crop Science cycle bottom delays beyond FY27.</strong> Erodes the Crop@Corteva-multiple thesis; the rerating arithmetic compresses below the trade hurdle.</li>
               </ul>
             </article>
           </div>
@@ -2511,25 +3046,25 @@
             <line x1="58" y1="216.8" x2="482" y2="216.8" stroke="#5a6478" stroke-width="0.7" stroke-dasharray="3,3" opacity="0.5"/>
             <text x="488.0" y="214.8" text-anchor="start" fill="#5a6478" font-size="8.5" font-family="IBM Plex Mono, monospace" letter-spacing="0.15">10y MIN</text>
             <text x="488.0" y="224.3" text-anchor="start" fill="#1a2436" font-size="9.5" font-family="IBM Plex Mono, monospace" font-weight="600">6.5×</text>
-            <path d="M 58.0,73.8 L 61.6,77.4 L 65.1,72.1 L 68.7,64.9 L 72.3,54.1 L 75.8,46.9 L 79.4,54.1 L 82.9,64.9 L 86.5,72.1 L 90.1,77.4 L 93.6,82.8 L 97.2,90.0 L 100.8,95.4 L 104.3,100.8 L 107.9,90.0 L 111.4,82.8 L 115.0,72.1 L 118.6,59.5 L 122.1,50.5 L 125.7,54.1 L 129.3,64.9 L 132.8,72.1 L 136.4,82.8 L 139.9,95.4 L 143.5,100.8 L 147.1,107.9 L 150.6,113.3 L 154.2,118.7 L 157.8,125.9 L 161.3,131.3 L 164.9,136.6 L 168.5,143.8 L 172.0,149.2 L 175.6,154.6 L 179.1,161.7 L 182.7,167.1 L 186.3,154.6 L 189.8,143.8 L 193.4,136.6 L 197.0,131.3 L 200.5,125.9 L 204.1,136.6 L 207.6,143.8 L 211.2,149.2 L 214.8,154.6 L 218.3,161.7 L 221.9,167.1 L 225.5,161.7 L 229.0,154.6 L 232.6,143.8 L 236.2,161.7 L 239.7,185.1 L 243.3,172.5 L 246.8,161.7 L 250.4,167.1 L 254.0,172.5 L 257.5,179.7 L 261.1,172.5 L 264.7,167.1 L 268.2,172.5 L 271.8,167.1 L 275.3,161.7 L 278.9,154.6 L 282.5,161.7 L 286.0,172.5 L 289.6,179.7 L 293.2,167.1 L 296.7,154.6 L 300.3,161.7 L 303.8,167.1 L 307.4,158.2 L 311.0,149.2 L 314.5,143.8 L 318.1,154.6 L 321.7,167.1 L 325.2,176.1 L 328.8,185.1 L 332.4,190.4 L 335.9,197.6 L 339.5,203.0 L 343.0,208.4 L 346.6,215.6 L 350.2,220.9 L 353.7,226.3 L 357.3,220.9 L 360.9,215.6 L 364.4,222.7 L 368.0,228.1 L 371.5,226.3 L 375.1,222.7 L 378.7,217.4 L 382.2,213.8 L 385.8,210.2 L 389.4,208.4 L 392.9,204.8 L 396.5,206.6 L 400.1,208.4 L 403.6,204.8 L 407.2,203.0 L 410.7,201.2 L 414.3,199.4 L 417.9,197.6 L 421.4,201.2 L 425.0,206.6 L 428.6,210.2 L 432.1,208.4 L 435.7,204.8 L 439.2,201.2 L 442.8,197.6 L 446.4,203.0 L 449.9,208.4 L 453.5,212.0 L 457.1,208.4 L 460.6,203.0 L 464.2,199.4 L 467.7,195.8 L 471.3,194.0 L 474.9,190.4 L 478.4,191.3 L 482.0,192.1 L 482.0,230.0 L 58.0,230.0 Z" fill="#1a5e9b" opacity="0.08"/>
-            <path d="M 58.0,73.8 L 61.6,77.4 L 65.1,72.1 L 68.7,64.9 L 72.3,54.1 L 75.8,46.9 L 79.4,54.1 L 82.9,64.9 L 86.5,72.1 L 90.1,77.4 L 93.6,82.8 L 97.2,90.0 L 100.8,95.4 L 104.3,100.8 L 107.9,90.0 L 111.4,82.8 L 115.0,72.1 L 118.6,59.5 L 122.1,50.5 L 125.7,54.1 L 129.3,64.9 L 132.8,72.1 L 136.4,82.8 L 139.9,95.4 L 143.5,100.8 L 147.1,107.9 L 150.6,113.3 L 154.2,118.7 L 157.8,125.9 L 161.3,131.3 L 164.9,136.6 L 168.5,143.8 L 172.0,149.2 L 175.6,154.6 L 179.1,161.7 L 182.7,167.1 L 186.3,154.6 L 189.8,143.8 L 193.4,136.6 L 197.0,131.3 L 200.5,125.9 L 204.1,136.6 L 207.6,143.8 L 211.2,149.2 L 214.8,154.6 L 218.3,161.7 L 221.9,167.1 L 225.5,161.7 L 229.0,154.6 L 232.6,143.8 L 236.2,161.7 L 239.7,185.1 L 243.3,172.5 L 246.8,161.7 L 250.4,167.1 L 254.0,172.5 L 257.5,179.7 L 261.1,172.5 L 264.7,167.1 L 268.2,172.5 L 271.8,167.1 L 275.3,161.7 L 278.9,154.6 L 282.5,161.7 L 286.0,172.5 L 289.6,179.7 L 293.2,167.1 L 296.7,154.6 L 300.3,161.7 L 303.8,167.1 L 307.4,158.2 L 311.0,149.2 L 314.5,143.8 L 318.1,154.6 L 321.7,167.1 L 325.2,176.1 L 328.8,185.1 L 332.4,190.4 L 335.9,197.6 L 339.5,203.0 L 343.0,208.4 L 346.6,215.6 L 350.2,220.9 L 353.7,226.3 L 357.3,220.9 L 360.9,215.6 L 364.4,222.7 L 368.0,228.1 L 371.5,226.3 L 375.1,222.7 L 378.7,217.4 L 382.2,213.8 L 385.8,210.2 L 389.4,208.4 L 392.9,204.8 L 396.5,206.6 L 400.1,208.4 L 403.6,204.8 L 407.2,203.0 L 410.7,201.2 L 414.3,199.4 L 417.9,197.6 L 421.4,201.2 L 425.0,206.6 L 428.6,210.2 L 432.1,208.4 L 435.7,204.8 L 439.2,201.2 L 442.8,197.6 L 446.4,203.0 L 449.9,208.4 L 453.5,212.0 L 457.1,208.4 L 460.6,203.0 L 464.2,199.4 L 467.7,195.8 L 471.3,194.0 L 474.9,190.4 L 478.4,191.3 L 482.0,192.1" fill="none" stroke="#1a5e9b" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
-            <path d="M 58.0,115.2 L 68.9,105.1 L 79.7,94.9 L 90.6,84.8 L 101.5,74.6 L 112.4,64.4 L 123.2,80.7 L 134.1,105.1 L 145.0,135.5 L 155.8,155.9 L 166.7,166.0 L 177.6,176.2 L 188.5,182.3 L 199.3,176.2 L 210.2,166.0 L 221.1,155.9 L 231.9,145.7 L 242.8,135.5 L 253.7,125.4 L 264.6,135.5 L 275.4,155.9 L 286.3,176.2 L 297.2,196.5 L 308.1,210.7 L 318.9,216.8 L 329.8,210.7 L 340.7,202.6 L 351.5,196.5 L 362.4,190.4 L 373.3,196.5 L 384.2,202.6 L 395.0,206.6 L 405.9,210.7 L 416.8,216.8 L 427.6,210.7 L 438.5,206.6 L 449.4,202.6 L 460.3,196.5 L 471.1,198.5 L 482.0,200.5" fill="none" stroke="#5a6478" stroke-width="1.3" stroke-dasharray="4,2.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
-            <circle cx="482.0" cy="192.1" r="3.8" fill="#1a5e9b" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="476.0" y="184.1" text-anchor="end" fill="#1a5e9b" font-size="11" font-family="IBM Plex Mono, monospace" font-weight="700">€41.10</text>
-            <circle cx="482.0" cy="200.5" r="3.2" fill="#1a2436" stroke="#ffffff" stroke-width="1.5"/>
-            <text x="476.0" y="214.5" text-anchor="end" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" font-weight="600">7.3×</text>
+            <path d="M 58.0,73.8 L 61.5,77.4 L 65.1,72.1 L 68.6,64.9 L 72.1,54.1 L 75.7,46.9 L 79.2,54.1 L 82.7,64.9 L 86.3,72.1 L 89.8,77.4 L 93.3,82.8 L 96.9,90.0 L 100.4,95.4 L 103.9,100.8 L 107.5,90.0 L 111.0,82.8 L 114.5,72.1 L 118.1,59.5 L 121.6,50.5 L 125.1,54.1 L 128.7,64.9 L 132.2,72.1 L 135.7,82.8 L 139.3,95.4 L 142.8,100.8 L 146.3,107.9 L 149.9,113.3 L 153.4,118.7 L 156.9,125.9 L 160.5,131.3 L 164.0,136.6 L 167.5,143.8 L 171.1,149.2 L 174.6,154.6 L 178.1,161.7 L 181.7,167.1 L 185.2,154.6 L 188.7,143.8 L 192.3,136.6 L 195.8,131.3 L 199.3,125.9 L 202.9,136.6 L 206.4,143.8 L 209.9,149.2 L 213.5,154.6 L 217.0,161.7 L 220.5,167.1 L 224.1,161.7 L 227.6,154.6 L 231.1,143.8 L 234.7,161.7 L 238.2,185.1 L 241.7,172.5 L 245.3,161.7 L 248.8,167.1 L 252.3,172.5 L 255.9,179.7 L 259.4,172.5 L 262.9,167.1 L 266.5,172.5 L 270.0,167.1 L 273.5,161.7 L 277.1,154.6 L 280.6,161.7 L 284.1,172.5 L 287.7,179.7 L 291.2,167.1 L 294.7,154.6 L 298.3,161.7 L 301.8,167.1 L 305.3,158.2 L 308.9,149.2 L 312.4,143.8 L 315.9,154.6 L 319.5,167.1 L 323.0,176.1 L 326.5,185.1 L 330.1,190.4 L 333.6,197.6 L 337.1,203.0 L 340.7,208.4 L 344.2,215.6 L 347.7,220.9 L 351.3,226.3 L 354.8,220.9 L 358.3,215.6 L 361.9,222.7 L 365.4,228.1 L 368.9,226.3 L 372.5,222.7 L 376.0,217.4 L 379.5,213.8 L 383.1,210.2 L 386.6,208.4 L 390.1,204.8 L 393.7,206.6 L 397.2,208.4 L 400.7,204.8 L 404.3,203.0 L 407.8,201.2 L 411.3,199.4 L 414.9,197.6 L 418.4,201.2 L 421.9,206.6 L 425.5,210.2 L 429.0,208.4 L 432.5,204.8 L 436.1,201.2 L 439.6,197.6 L 443.1,203.0 L 446.7,208.4 L 450.2,212.0 L 453.7,208.4 L 457.3,203.0 L 460.8,199.4 L 464.3,195.8 L 467.9,194.0 L 471.4,190.4 L 474.9,191.3 L 478.5,192.1 L 482.0,201.0 L 482.0,230.0 L 58.0,230.0 Z" fill="#1a5e9b" opacity="0.08"/>
+            <path d="M 58.0,73.8 L 61.5,77.4 L 65.1,72.1 L 68.6,64.9 L 72.1,54.1 L 75.7,46.9 L 79.2,54.1 L 82.7,64.9 L 86.3,72.1 L 89.8,77.4 L 93.3,82.8 L 96.9,90.0 L 100.4,95.4 L 103.9,100.8 L 107.5,90.0 L 111.0,82.8 L 114.5,72.1 L 118.1,59.5 L 121.6,50.5 L 125.1,54.1 L 128.7,64.9 L 132.2,72.1 L 135.7,82.8 L 139.3,95.4 L 142.8,100.8 L 146.3,107.9 L 149.9,113.3 L 153.4,118.7 L 156.9,125.9 L 160.5,131.3 L 164.0,136.6 L 167.5,143.8 L 171.1,149.2 L 174.6,154.6 L 178.1,161.7 L 181.7,167.1 L 185.2,154.6 L 188.7,143.8 L 192.3,136.6 L 195.8,131.3 L 199.3,125.9 L 202.9,136.6 L 206.4,143.8 L 209.9,149.2 L 213.5,154.6 L 217.0,161.7 L 220.5,167.1 L 224.1,161.7 L 227.6,154.6 L 231.1,143.8 L 234.7,161.7 L 238.2,185.1 L 241.7,172.5 L 245.3,161.7 L 248.8,167.1 L 252.3,172.5 L 255.9,179.7 L 259.4,172.5 L 262.9,167.1 L 266.5,172.5 L 270.0,167.1 L 273.5,161.7 L 277.1,154.6 L 280.6,161.7 L 284.1,172.5 L 287.7,179.7 L 291.2,167.1 L 294.7,154.6 L 298.3,161.7 L 301.8,167.1 L 305.3,158.2 L 308.9,149.2 L 312.4,143.8 L 315.9,154.6 L 319.5,167.1 L 323.0,176.1 L 326.5,185.1 L 330.1,190.4 L 333.6,197.6 L 337.1,203.0 L 340.7,208.4 L 344.2,215.6 L 347.7,220.9 L 351.3,226.3 L 354.8,220.9 L 358.3,215.6 L 361.9,222.7 L 365.4,228.1 L 368.9,226.3 L 372.5,222.7 L 376.0,217.4 L 379.5,213.8 L 383.1,210.2 L 386.6,208.4 L 390.1,204.8 L 393.7,206.6 L 397.2,208.4 L 400.7,204.8 L 404.3,203.0 L 407.8,201.2 L 411.3,199.4 L 414.9,197.6 L 418.4,201.2 L 421.9,206.6 L 425.5,210.2 L 429.0,208.4 L 432.5,204.8 L 436.1,201.2 L 439.6,197.6 L 443.1,203.0 L 446.7,208.4 L 450.2,212.0 L 453.7,208.4 L 457.3,203.0 L 460.8,199.4 L 464.3,195.8 L 467.9,194.0 L 471.4,190.4 L 474.9,191.3 L 478.5,192.1 L 482.0,201.0" fill="none" stroke="#1a5e9b" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M 58.0,115.2 L 68.8,105.1 L 79.5,94.9 L 90.3,84.8 L 101.1,74.6 L 111.9,64.4 L 122.7,80.7 L 133.5,105.1 L 144.3,135.5 L 155.0,155.9 L 165.8,166.0 L 176.6,176.2 L 187.4,182.3 L 198.1,176.2 L 208.9,166.0 L 219.7,155.9 L 230.5,145.7 L 241.3,135.5 L 252.1,125.4 L 262.9,135.5 L 273.6,155.9 L 284.4,176.2 L 295.2,196.5 L 306.0,210.7 L 316.7,216.8 L 327.5,210.7 L 338.3,202.6 L 349.1,196.5 L 359.9,190.4 L 370.7,196.5 L 381.5,202.6 L 392.2,206.6 L 403.0,210.7 L 413.8,216.8 L 424.5,210.7 L 435.3,206.6 L 446.1,202.6 L 456.9,196.5 L 467.7,198.5 L 478.5,200.5 L 482.0,204.6" fill="none" stroke="#5a6478" stroke-width="1.3" stroke-dasharray="4,2.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+            <circle cx="482.0" cy="201.0" r="3.8" fill="#1a5e9b" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="476.0" y="193.0" text-anchor="end" fill="#1a5e9b" font-size="11" font-family="IBM Plex Mono, monospace" font-weight="700">€36.16</text>
+            <circle cx="482.0" cy="204.6" r="3.2" fill="#1a2436" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="476.0" y="218.6" text-anchor="end" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" font-weight="600">7.1×</text>
             <text x="58.0" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 16</text>
             <text x="142.8" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 18</text>
             <text x="227.6" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 20</text>
             <text x="312.4" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 22</text>
             <text x="397.2" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 24</text>
-            <text x="482.0" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Apr 26</text>
+            <text x="482.0" y="250" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Jun 26</text>
             </svg>
-            <div class="chart-caption">Price range on chart: €21 to €122. Multiple: 10y MIN 6.5× · AVG 9.2× · MAX 14.0× · NOW 7.3×.</div>
+            <div class="chart-caption"><strong style="color: var(--bayer-deep);">Takeaway.</strong> Today's 7.1&times; is more than two turns below the 10-year average of 9.2&times;, the deepest multiple discount in the deck. This is not a small mean-reversion bet, the multiple is reflecting overhangs, not core asset quality. If even one overhang resolves (SCOTUS, leverage, CEO stance), the multiple has room to retrace toward 9&times;. That said, the discount is justified at today's entry, the conditional thesis only gets attractive at a lower entry price (see &sect; 4.3). Price range on chart: &euro;21 to &euro;122. Multiple: 10y MIN 6.5&times; &middot; AVG 9.2&times; &middot; MAX 14.0&times; &middot; NOW 7.1&times;.</div>
             </div>
                         <div class="chart-box" style="margin-top:16px;">
-            <div class="chart-title" style="color:#1a5e9b;">② ROIC &amp; ROCE: Ten-Year Trend vs Cost of Capital</div>
-            <div class="chart-sub">Annual % returns on invested capital and capital employed. Shading shows value creation (green) where ROIC &gt; WACC and value destruction (red) where ROIC &lt; WACC.</div>
+            <div class="chart-title" style="color:#1a5e9b;">② ROIC &amp; ROCE: Ten-Year Trajectory</div>
+            <div class="chart-sub">Annual % returns on invested capital and capital employed, ten-year trajectory.</div>
             <svg class="chart-svg" viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(52, 10)">
               <line x1="0" y1="7" x2="18" y2="7" stroke="#1a5e9b" stroke-width="2.2" stroke-linecap="round"/>
@@ -2537,12 +3072,6 @@
               <text x="22" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">ROIC</text>
               <line x1="80" y1="7" x2="98" y2="7" stroke="#1a5e9b" stroke-width="1.4" stroke-dasharray="5,2.5" stroke-linecap="round" opacity="0.7"/>
               <text x="102" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">ROCE</text>
-              <line x1="160" y1="7" x2="178" y2="7" stroke="#8aa8c8" stroke-width="1.2" stroke-dasharray="4,2.5" stroke-linecap="round"/>
-              <text x="182" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">WACC 7.5%</text>
-              <rect x="260" y="2" width="10" height="10" fill="#4ade80" opacity="0.22" rx="1"/>
-              <text x="274" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Value creation</text>
-              <rect x="370" y="2" width="10" height="10" fill="#d45b5b" opacity="0.22" rx="1"/>
-              <text x="384" y="10" fill="#1a2436" font-size="10" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">Value destruction</text>
             </g>
             <line x1="52" y1="176.5" x2="520" y2="176.5" stroke="#d8dde7" stroke-width="0.5" opacity="0.25"/>
             <text x="46.0" y="179.5" text-anchor="end" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace">0%</text>
@@ -2553,18 +3082,7 @@
             <line x1="52" y1="38.0" x2="520" y2="38.0" stroke="#d8dde7" stroke-width="0.5" opacity="0.25"/>
             <text x="46.0" y="41.0" text-anchor="end" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace">20%</text>
             <line x1="52" y1="176.5" x2="520" y2="176.5" stroke="#9aa3b2" stroke-width="0.8" opacity="0.5"/>
-            <path d="M 52.0,96.8 L 104.0,105.8 L 104.0,124.5 L 52.0,124.5 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 104.0,105.8 L 156.0,124.5 L 156.0,124.5 L 104.0,124.5 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 156.0,124.5 L 156.0,124.5 L 156.0,124.5 Z" fill="#4ade80" opacity="0.18"/>
-            <path d="M 156.0,124.5 L 208.0,138.4 L 208.0,124.5 Z" fill="#d45b5b" opacity="0.20"/>
-            <path d="M 208.0,138.4 L 260.0,154.3 L 260.0,124.5 L 208.0,124.5 Z" fill="#d45b5b" opacity="0.20"/>
-            <path d="M 260.0,154.3 L 312.0,141.2 L 312.0,124.5 L 260.0,124.5 Z" fill="#d45b5b" opacity="0.20"/>
-            <path d="M 312.0,141.2 L 364.0,136.3 L 364.0,124.5 L 312.0,124.5 Z" fill="#d45b5b" opacity="0.20"/>
-            <path d="M 364.0,136.3 L 416.0,161.9 L 416.0,124.5 L 364.0,124.5 Z" fill="#d45b5b" opacity="0.20"/>
-            <path d="M 416.0,161.9 L 468.0,182.0 L 468.0,124.5 L 416.0,124.5 Z" fill="#d45b5b" opacity="0.20"/>
-            <path d="M 468.0,182.0 L 520.0,186.2 L 520.0,124.5 L 468.0,124.5 Z" fill="#d45b5b" opacity="0.20"/>
             <path d="M 52.0,83.0 L 104.0,92.0 L 156.0,115.5 L 208.0,131.5 L 260.0,145.3 L 312.0,133.5 L 364.0,128.0 L 416.0,154.3 L 468.0,173.0 L 520.0,178.5" fill="none" stroke="#1a5e9b" stroke-width="1.5" stroke-dasharray="5,2.5" opacity="0.65" stroke-linejoin="round" stroke-linecap="round"/>
-            <line x1="52" y1="124.5" x2="520" y2="124.5" stroke="#8aa8c8" stroke-width="1.3" stroke-dasharray="5,3" opacity="0.9"/>
             <path d="M 52.0,96.8 L 104.0,105.8 L 156.0,124.5 L 208.0,138.4 L 260.0,154.3 L 312.0,141.2 L 364.0,136.3 L 416.0,161.9 L 468.0,182.0 L 520.0,186.2" fill="none" stroke="#1a5e9b" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
             <circle cx="52.0" cy="96.8" r="3.2" fill="#1a5e9b" stroke="#ffffff" stroke-width="1.5"/>
             <text x="52.0" y="88.8" text-anchor="middle" fill="#1a5e9b" font-size="9.5" font-family="IBM Plex Mono, monospace" font-weight="700">11.5</text>
@@ -2598,20 +3116,20 @@
             <text x="520.0" y="220" text-anchor="middle" fill="#9aa3b2" font-size="9" font-family="IBM Plex Mono, monospace" letter-spacing="0.3">2025</text>
             </svg>
             <div class="chart-caption" style="margin-top:6px;">
-              <span style="color:#5a6478; font-size:10px; letter-spacing:0.08em;">WACC DERIVATION:</span>
-              <span style="font-size:11.5px;">β ~0.9 × 5.5% ERP + 3.0% Rf + 4% after-tax cost of debt (40% weight) + 75bps litigation-uncertainty premium. Risk-free rate is 10-year sovereign average (DE/UK/NL).</span>
+              <p style="margin: 0 0 var(--s-2) 0;"><strong style="color: var(--bayer-deep);">Takeaway. High-return assets trapped inside a complex group.</strong> The group ROIC line masks segment-level reality: Pharma ~25%, Crop Science ~12 to 14% through the ag cycle, Consumer Health ~20%+. The group number is suppressed by Roundup provisions, post-Monsanto leverage, and conglomerate complexity, not by underlying asset quality. FY25 group ROIC is the highest since the Monsanto deal. <em>This is overhang-driven, not asset-quality-driven &mdash; which is why a structural unlock (CH separation) is the rerating mechanism.</em></p>
             </div>
             </div>
           </div>
+
         </section>
 
         <section class="section" aria-labelledby="bayer-commit">
           <p class="section-label is-bayer">&sect; 4.3, The commit (conditional)</p>
-          <h2 id="bayer-commit">Trigger entry &middot; Status quo &middot; Catalyst</h2>
+          <h2 id="bayer-commit">Conditional entry &middot; Status quo &middot; Catalyst</h2>
 
           <div class="commit-row">
             <div class="commit-cell is-bear">
-              <p class="commit-label">Trigger entry</p>
+              <p class="commit-label">Conditional entry</p>
               <p class="commit-val">&euro;30 &middot; &minus;27%</p>
               <p class="commit-note"><strong>Adverse SCOTUS plus provision raise.</strong> Stock retraces ~50% of the rally from &euro;21 low. <em>This is the level Cevian would build at, 27% IRR on the conditional catalyst case.</em></p>
             </div>
@@ -2623,43 +3141,53 @@
             <div class="commit-cell is-bull-bayer">
               <p class="commit-label">Catalyst (conditional)</p>
               <p class="commit-val">&euro;62 &middot; +50%</p>
-              <p class="commit-note"><strong>Break-up SOTP at peer multiples.</strong> Pharma@Sanofi 9&times; plus Crop@Corteva 11&times; plus CH@Haleon 14.9&times;. <em>Conditional on CEO conversion or contract-end transition.</em></p>
+              <p class="commit-note"><strong>Break-up SOTP at peer multiples.</strong> Pharma at European mid-tier 9&times; (post-overhang re-rating, GSK 8.5&times; floor) plus Crop@Corteva 11&times; plus CH@Haleon 14.9&times;. <em>Conditional on CEO conversion or contract-end transition.</em></p>
             </div>
           </div>
         </section>
 
         <section class="section" aria-labelledby="bayer-return">
-          <p class="section-label is-bayer">&sect; 4.4, Return decomposition</p>
-          <h2 id="bayer-return">The math, and what it depends on</h2>
-          <p class="return-meta">Indicative 3-year IRR: ~15% at &euro;41 entry &middot; ~27% at &euro;30 trigger entry</p>
+          <p class="section-label is-bayer">&sect; 4.4, The expected-value case for waiting</p>
+          <h2 id="bayer-return">What is lost by waiting, what downside is avoided</h2>
+          <p class="lede">The math is the strongest in the deck and the timing is the worst. The conditional-entry discipline exists because <em>value and timing are different questions</em>. Stock +94% off the &euro;21 low means the asymmetry has compressed; entering at &euro;41 prices in optionality that has not yet been earned. The four-path table below makes the trade explicit.</p>
 
           <div class="table-wrap">
             <table class="ct">
               <thead>
                 <tr>
-                  <th scope="col" style="width: 200px;">Return layer</th>
-                  <th scope="col" style="text-align: center; width: 130px;">Annual contribution</th>
-                  <th scope="col">Evidence (FY25 actuals, CapIQ-verified)</th>
+                  <th scope="col" style="width: 320px;">Path</th>
+                  <th scope="col" style="text-align: center; width: 110px;">Indicative probability</th>
+                  <th scope="col" style="text-align: center; width: 130px;">3-yr IRR</th>
+                  <th scope="col">Why this is the outcome</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><strong>Multiple expansion (entry)</strong></td>
-                  <td style="text-align:center;" class="cell-val">~12 to 14%</td>
-                  <td>SOTP &euro;62/sh vs &euro;41 today = +50%. Vs &euro;30 trigger entry = +107%, ~27% IRR over 3y.</td>
+                <tr style="background: var(--positive-bg, rgba(95,185,140,0.06));">
+                  <td><strong style="color: var(--bayer-deep);">① Wait, conditions met, enter at &euro;30</strong></td>
+                  <td style="text-align: center;" class="cell-val">~30 to 35%</td>
+                  <td style="text-align: center; color: var(--positive);" class="cell-val"><strong>~27%</strong></td>
+                  <td>Adverse SCOTUS plus provision raise resets the stock to ~&euro;30 (50% retrace of the &euro;21&rarr;&euro;41 rally). FIFRA decision then closes the litigation tail; CEO converts or successor inherits the case. SOTP &euro;62 from a &euro;30 base. <strong>This is the version Cevian wants to own.</strong></td>
                 </tr>
                 <tr>
-                  <td><strong>Dividend yield</strong></td>
-                  <td style="text-align:center;" class="cell-val">~2%</td>
-                  <td>Reinstated dividend trajectory, but pre-separation modest. Material upside post-CH spin.</td>
+                  <td><strong>② Wait, conditions not met, status quo holds</strong></td>
+                  <td style="text-align: center;" class="cell-val">~30 to 40%</td>
+                  <td style="text-align: center;" class="cell-val">~5 to 6%</td>
+                  <td>CEO reaffirms "not now," SCOTUS is mixed, modest organic recovery. <strong>What is lost by waiting:</strong> the rally continues from &euro;41, opportunity cost is roughly the forgone status-quo IRR, ~5 to 6% per year x 2 years. <em>Call it ~10 to 12% relative to entering today.</em></td>
+                </tr>
+                <tr style="background: var(--negative-bg, rgba(212,68,68,0.04));">
+                  <td><strong style="color: var(--negative);">③ Enter today at &euro;41, bear case lands</strong></td>
+                  <td style="text-align: center;" class="cell-val">~20 to 25%</td>
+                  <td style="text-align: center; color: var(--negative);" class="cell-val">&minus;15 to &minus;20%</td>
+                  <td>Adverse SCOTUS plus provision raise plus CEO holds firm. Stock retraces to &euro;25 to 30, then compounds at the status-quo rate. <strong>What is avoided by waiting:</strong> a 15 to 20% drawdown plus the dead-money period that follows it. Call it ~25 to 30% in cumulative loss-and-recovery cost relative to a &euro;30 entry.</td>
                 </tr>
                 <tr>
-                  <td><strong>Organic compounding</strong></td>
-                  <td style="text-align:center;" class="cell-val">~1 to 2%</td>
-                  <td>FY25 EBITDA missed guide. Pharma pipeline (Nubeqa &euro;1.5bn+, Kerendia &euro;1bn+) is the offset.</td>
+                  <td><strong>④ Enter today at &euro;41, best case lands</strong></td>
+                  <td style="text-align: center;" class="cell-val">~10 to 15%</td>
+                  <td style="text-align: center;" class="cell-val">~14 to 15%</td>
+                  <td>SCOTUS favourable plus CEO converts. Catalyst case to &euro;62. Acceptable IRR but capped by the entry: Cevian pays full price for optionality that has already partly priced in.</td>
                 </tr>
-                <tr>
-                  <td colspan="3" style="background: var(--bayer-bg);"><strong style="color: var(--bayer-deep);">The math is the thesis, and it is conditional on the CEO's stance changing.</strong></td>
+                <tr style="background: var(--bayer-bg); border-top: 2px solid var(--bayer);">
+                  <td colspan="4"><strong style="color: var(--bayer-deep);">The trade is approximately symmetric in scale but asymmetric in payoff.</strong> Waiting costs ~10 to 12% in the status-quo case (path ②) and avoids ~25 to 30% drawdown in the bear case (path ③). In the catalyst case, waiting nearly doubles the IRR (27% vs 14 to 15%). <strong>This is the wait dividend.</strong> The discipline is to honour the entry conditions and not drift in once the rally has moved further. These conditions exist precisely to discipline against that drift.</td>
                 </tr>
               </tbody>
             </table>
@@ -2667,51 +3195,50 @@
         </section>
 
         <section class="section" aria-labelledby="bayer-mech">
-          <p class="section-label is-bayer">&sect; 4.5, The activist mechanism (when triggered)</p>
-          <h2 id="bayer-mech">What Cevian can actually do, when triggered</h2>
+          <p class="section-label is-bayer">&sect; 4.5, The activist mechanism (once conditions are met)</p>
+          <h2 id="bayer-mech">What Cevian can actually do, once conditions are met</h2>
 
           <div class="mech-box is-bayer">
             <p class="mech-eyebrow">The instrument &middot; gated</p>
             <div class="mech-content">
               <p><strong>The ask:</strong> Consumer Health separation (Haleon precedent, GSK spin-off May 2022). <strong>SB channel:</strong> the Aufsichtsrat Audit Committee Chair has the relevant CFO-track operating background to host the conversation on portfolio structure; the Chair has the audit-firm background needed to keep early dialogue private and credible inside the German governance circuit.</p>
-              <p><strong>Bluebell reality:</strong> their 2023 public-letter campaign has put SB on defensive footing toward all activist contact, Cevian's first letter must explicitly distinguish the constructive-engagement model. <strong>The CEO question:</strong> CH separation requires either the current CEO converting to the case or his successor inheriting it; the ABB precedent worked partly because the CEO transition was already happening, Bayer requires Cevian to drive it.</p>
+              <p><strong>Bluebell reality:</strong> their 2023 public-letter campaign has put SB on defensive footing toward all activist contact, Cevian's first letter must explicitly distinguish the constructive-engagement model. <strong>The constructive-activist seat is already taken.</strong> Jeff Ubben &mdash; ValueAct's founder, the archetype of the constructive activist Cevian models itself on &mdash; has sat on Bayer's Supervisory Board since April 2024 (term to 2028), added expressly for capital-markets expertise. That cuts two ways. It corroborates the thesis: a board-level activist of exactly this pedigree reads the same SOTP. But it also crowds Cevian's edge &mdash; the activist-on-the-board playbook is already being run by the man who wrote it, and in roughly two years it has not pried a separation loose from Anderson's &ldquo;not now.&rdquo; For Cevian that is less an invitation than a measure of how immovable the board is, which is precisely why entry stays conditioned on the CEO question turning, not on adding one more activist voice. <strong>The CEO question:</strong> CH separation requires either the current CEO converting to the case or his successor inheriting it; the ABB precedent worked partly because the CEO transition was already happening, Bayer requires Cevian to drive it.</p>
             </div>
           </div>
         </section>
 
         <section class="section" aria-labelledby="bayer-100">
           <p class="section-label is-bayer">&sect; 4.6, Watchlist plan (no live engagement)</p>
-          <h2 id="bayer-100">No live position, monitor the three triggers</h2>
+          <h2 id="bayer-100">No live position, monitor the three conditions</h2>
+          <p class="lede">Same Scale / Test / Monitor framework, adapted for a watchlist case. <strong>Scale</strong> stays at zero today, capital preserved. <strong>Test</strong> defines the three required developments that would force a position. <strong>Monitor</strong> is the tracking discipline so the entry isn't a six-month scramble.</p>
 
-          <div class="grid-2">
+          <div class="grid-3">
             <article class="card is-bayer">
-              <p class="card-label">Days 1 to 30 &middot; Trigger monitoring setup</p>
+              <p class="card-label" style="color: var(--bayer-deep);">SCALE &middot; Today</p>
               <div class="card-body">
-                <p><strong>(1) Position: zero.</strong> No live commitment. Capital preserved.</p>
-                <p><strong>(2) SCOTUS Durnell tracking.</strong> Oral arguments 27 April 2026; decision expected end-June 2026. Pre-position legal counsel to read the ruling within 48 hours of release. Pre-write trigger memo.</p>
-                <p><strong>(3) CEO signal-watching.</strong> Track every public statement for portfolio-action language. Q1 2026 earnings call (early May) is the next data point. CEO renewal discussion typically begins 18 months before contract end; the current CEO's term ends June 2027.</p>
+                <p><strong>(1) Position: zero.</strong> No live commitment, capital preserved. Stock +94% off the &euro;21 low; the thesis is right but the entry is wrong.</p>
+                <p><strong>(2) Bluebell-distinguishing letter drafted.</strong> If conditions are met, the first letter is ready: explicit on private engagement, 5-7 year hold, Akzo Nobel reference model.</p>
               </div>
             </article>
             <article class="card is-bayer">
-              <p class="card-label">Days 31 to 100 &middot; Pre-diligence and network</p>
+              <p class="card-label" style="color: var(--bayer-deep);">TEST &middot; Three conditions</p>
               <div class="card-body">
-                <p><strong>(4) Pre-diligence.</strong> Build the segment-level model now so trigger entry doesn't require a six-month build. Consumer Health peer multiples (Haleon, Kenvue, Opella) refreshed quarterly. Crop Science cycle indicators (US corn acreage, glyphosate volume) tracked.</p>
-                <p><strong>(5) Aufsichtsrat relationships, soft.</strong> No direct contact yet. Map the Chair and Audit Committee Chair backgrounds against the Cevian network: audit-firm and German industrial CFO routes are the natural soft introductions if and when triggers fire.</p>
-                <p><strong>(6) Bluebell-distinguishing language drafted.</strong> If triggers fire, the first letter must be ready. Draft now: explicit on private-engagement, no-public-pressure, 5 to 7 year hold, Akzo Nobel reference engagement model.</p>
+                <p><strong>(3) SCOTUS Durnell ruling</strong> (Apr-Jun 2026). Favourable FIFRA preemption closes the bulk of state-court tail. Probability ~40-50%.</p>
+                <p><strong>(4) CEO stance evolves</strong> from "not now... not never" to portfolio-action openness, or contract renewal discussion opens (term ends Jun 2027). Or stock retraces to ~&euro;30 (~50% retrace of the &euro;21&rarr;&euro;41 rally). <strong>Live position requires two of three to fire.</strong></p>
               </div>
             </article>
-          </div>
-
-          <div class="synth" style="margin-top: 24px;">
-            <h3>The trigger thresholds (live position only when two of three fire)</h3>
-            <p><strong>Trigger (1) &middot; SCOTUS Durnell.</strong> Favourable FIFRA preemption ruling closes most state-court tail. Provision range tightens. <em>Probability: ~40 to 50% per coverage.</em></p>
-            <p><strong>Trigger (2) &middot; CEO stance.</strong> Public statement evolves from "not now... not never" to portfolio-action openness. Or contract renewal discussion (June 2027 expiry). <em>Probability: harder to estimate, but watching.</em></p>
-            <p><strong>Trigger (3) &middot; Entry price.</strong> Stock retraces toward &euro;30 (~50% retracement of rally from &euro;21.17 low). Mechanical, not narrative. <em>Probability: depends on Trigger (1) outcome.</em></p>
+            <article class="card is-bayer">
+              <p class="card-label" style="color: var(--bayer-deep);">MONITOR &middot; Continuous</p>
+              <div class="card-body">
+                <p><strong>(5) Pre-diligence built now.</strong> Segment-level model refreshed quarterly (Haleon/Kenvue CH multiples, Corteva crop cycle, Sanofi pharma comp). Conditional entry must not require a six-month build.</p>
+                <p><strong>(6) Aufsichtsrat soft-mapping.</strong> No direct contact. Chair and Audit Committee backgrounds mapped against Cevian's German-industrial network for the soft introduction <em>once conditions are met</em>.</p>
+              </div>
+            </article>
           </div>
         </section>
 
         <aside class="caveat" role="note">
-          <p><strong>The CEO's exact quote (March 2024, reaffirmed):</strong> <em>"Our answer is 'not now' and this shouldn't be misunderstood as 'never.' Of course, we will keep an open mind."</em> Bayer management considered consumer health sale and decided not now. The 24 to 36 month focus is pharma pipeline, litigation, debt reduction, Dynamic Shared Ownership (&euro;2bn savings target from 2026). <strong>Until two triggers fire, Bayer ranks #3 (analytical thesis only), not a live recommendation.</strong> FY25 EBITDA &euro;8.87bn missed &euro;9.7 to 10.2bn guide. Inclusive Capital exited March 2026 at &euro;37.45.</p>
+          <p><strong>The CEO's exact quote (March 2024, reaffirmed):</strong> <em>"Our answer is 'not now' and this shouldn't be misunderstood as 'never.' Of course, we will keep an open mind."</em> Bayer management considered consumer health sale and decided not now. The 24 to 36 month focus is pharma pipeline, litigation, debt reduction, Dynamic Shared Ownership (&euro;2bn savings target from 2026). <strong>Until two of three conditions are met, Bayer ranks #3 (analytical thesis only), not a live recommendation.</strong> FY25 EBITDA &euro;8.87bn missed &euro;9.7 to 10.2bn guide. Inclusive Capital exited its equity stake in March 2026 at &euro;37.45 &mdash; but founder Jeff Ubben remains on the Supervisory Board through 2028: the activist fund is out of the stock, the activist director is not off the board.</p>
         </aside>
 
         <footer class="doc-footer">
